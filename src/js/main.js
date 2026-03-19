@@ -1,6 +1,7 @@
 
 import '../scss/index.scss';
 import { navDivSimple } from '../components/header/nav-bar';
+import { welcomeHero, gridFilters } from '../components/content/featured-products'
 
 // const app = document.querySelector('#app');
 
@@ -16,4 +17,4 @@ import { navDivSimple } from '../components/header/nav-bar';
 
 // divTest.append(hOneTest,buttonTest);
 
-app.append(navDivSimple());
+app.append(navDivSimple(), welcomeHero(), gridFilters());

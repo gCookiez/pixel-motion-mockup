@@ -6,6 +6,7 @@ export default {
     outDir: '../dist'
   },
   server: {
+    host: '10.64.48.161',
     port: 8080
   },
   // Optional: Silence Sass deprecation warnings. See note below.

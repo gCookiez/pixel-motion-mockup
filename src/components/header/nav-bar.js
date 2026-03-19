@@ -25,7 +25,7 @@ export function navDivSimple() {
    
     const hamburger = hamburgerButton('hm');
     const logo = hamburgerButton('logo');
-    const details = hamburgerButton('');
+    const details = hamburgerButton('details');
     
 
     const navBarClasses = ['container-lg', 'text-center', 'bg-light']
