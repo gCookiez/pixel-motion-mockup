@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 #reference files
-Parts.txt
+# Parts.txt
