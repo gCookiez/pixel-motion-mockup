@@ -53,4 +53,30 @@
 }
 /* End Showcase products*/
 
+/*Big Link Area*/
+.big-link-container {
+    background-color: yellow;
+}
+
+.big-link-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+
+/*End Big Link Area*/
+
+/* Featured Vehicles */
+.vehicle-carousel {
+    display: flex;
+}
+
+.motor-frame {
+    display: flex;
+    flex-direction: column;
+}
+
 /* End Mobile Media query */
