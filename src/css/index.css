@@ -1,3 +1,56 @@
-#app {
-    background-color: rgb(255,0,0);
+/* wrap in a mobile container */
+
+* {
+    --button-padding: 50px;
 }
+
+#app {
+    background-color: rgb(255, 0, 0);
+}
+
+/* search products */
+.button-grid {
+    display: grid;
+    background-color: blue;
+    grid-template-areas: '. .' 'full full' 'search search'  ;
+    grid-template-columns: '1fr 1fr';
+    justify-content: center;
+    gap: 10px;
+}
+
+.front-button {
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    padding-left: var(--button-padding);
+    padding-right: var(--button-padding);
+}
+
+.front-button:nth-child(3) {
+    grid-area: full;
+}
+
+.search-area {
+    grid-area: search;
+    background-color: white;
+    height: 30px;
+    width: 100%;
+}
+
+/* End search products */
+
+/* Showcase products*/
+.showcase-pro-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: green;
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* End Showcase products*/
+
+/* End Mobile Media query */

@@ -1,44 +1,21 @@
 import * as bootstrap from 'bootstrap';
+import { bootstrapColumns, bootstrapRows } from '../recycle/rows-and-columns';
 
+const navBar = document.createElement('div');
+const navRow = bootstrapRows();
 
+const hamburger = bootstrapColumns();
+const logo = bootstrapColumns();
+const details = bootstrapColumns();
 
-export function columnBase(classes) {
-    const columnBase = document.createElement('div');
-    columnBase.classList.add('col', ...classes);
-    return columnBase;
-}
+navRow.classList.add('text-center')
 
+hamburger.innerHTML = `<h1> Hamburger </h1>`
+logo.innerHTML = `<h1> logo </h1>`
+details.innerHTML = `<h1> details </h1>`
 
-// TODO: Find Icon pack for webpage
-export function hamburgerButton(content) {
-    const columnContent = columnBase(['w-25', 'h-auto', 'd-inline-block']);
-    const title = document.createElement('h4');
-    title.innerHTML = `${content || ''}`
-    columnContent.append(title);
+navRow.append(hamburger, logo, details)
+navBar.append(navRow);
 
-    return columnContent;
-}
-
-export function navDivSimple() {
-    const navBarDiv = document.createElement('div');
-    const rowContentsDiv = document.createElement('div');
-   
-    const hamburger = hamburgerButton('hm');
-    const logo = hamburgerButton('logo');
-    const details = hamburgerButton('details');
-    
-
-    const navBarClasses = ['container-lg', 'text-center', 'bg-light']
-    const buttonClasses = ['row', 'align-items-start', 'bg-light', 'text-dark']
-
-    navBarDiv.classList.add(...navBarClasses);
-    rowContentsDiv.classList.add(...buttonClasses);
-
-    rowContentsDiv.append(hamburger, logo, details);
-
-    navBarDiv.append(rowContentsDiv);
-
-    return navBarDiv;
-}
-
+export {navBar};
 
