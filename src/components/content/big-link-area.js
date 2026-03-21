@@ -1,5 +1,3 @@
-import * as bootstrap from 'bootstrap';
-
 function bigLinkTemplate(title) {
     const bigLinkItem = document.createElement('div');
     const bigLinkTitle = document.createElement('h2');

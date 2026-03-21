@@ -1,4 +1,3 @@
-import * as bootstrap from 'bootstrap';
 import { shopButtons } from '../recycle/non-standard-buttons';
 
 

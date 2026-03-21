@@ -1,5 +1,3 @@
-import * as bootstrap from 'bootstrap';
-
 
 function motorItemTemplate(obj) {
     const motorFrame = document.createElement('div');
@@ -57,4 +55,4 @@ for (var obj of products) {
 featuredVehicleContainer.classList.add('featured-vehicle-area');
 featuredVehicleContainer.append(featuredTitle, featuredVehiclesCarousel);
 
-export { featuredVehicleContainer};
+export { featuredVehicleContainer };

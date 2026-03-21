@@ -72,11 +72,69 @@
 /* Featured Vehicles */
 .vehicle-carousel {
     display: flex;
+    background-color: orange;
 }
 
 .motor-frame {
     display: flex;
     flex-direction: column;
 }
+
+/* End Featured Vehicles */
+
+/*Meet the Team*/
+
+.team-container {
+    background-color: purple;
+}
+
+.meet-team-btn {
+    border: 1px solid black;
+    height: 30px;
+}
+
+.team-carousel {
+    display: flex;
+    justify-content: space-around;
+}
+
+/*End Meet the Team*/
+
+/* story containers */
+
+
+/* End Story Containers */
+
+/* Reviews */
+
+.review-container {
+    background-color: peachpuff;
+}
+
+.review-carousel {
+    display: flex;
+}
+
+/* End Reviews */
+
+/* news letter*/
+
+/* end new letter */
+
+/* hours */
+.dealer-info-container {
+    background-color:chartreuse;
+}
+/* end hours */
+
+/*quick-links*/
+
+.link-groups {
+    background-color: cadetblue;
+}
+/*end quick-links*/
+
+
+
 
 /* End Mobile Media query */

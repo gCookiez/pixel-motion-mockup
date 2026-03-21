@@ -1,5 +1,3 @@
-import * as bootstrap from 'bootstrap';
-
 function productGridItem(title) {
     const productItem = document.createElement('div');
     const productTitle = document.createElement('h4');

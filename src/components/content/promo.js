@@ -1,5 +1,3 @@
-import * as bootstrap from 'bootstrap';
-
 function promoButton(title) {
 	const promoButton = document.createElement('div');
 	const promoButtonTitle = document.createElement('h3');
