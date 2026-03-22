@@ -8,12 +8,13 @@ const searchContainer = document.createElement('div');
 const buttonNames = ["SHOP NEW", "SHOP-PREOWNED", "SPECIALS"];
 
 
-firstContainer.classList.add('container');
+firstContainer.classList.add('container', 'p-4');
 buttonContainer.classList.add('button-grid');
-searchContainer.classList.add('search-area')
+searchContainer.classList.add('search-area');
+
 
 for (var buttonText of buttonNames) {
-    const shopButton = shopButtons('def', buttonText); 
+    const shopButton = shopButtons('def filter-buttons', buttonText); 
     buttonContainer.append(shopButton);
 }
 

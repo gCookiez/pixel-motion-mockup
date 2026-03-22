@@ -1,34 +1,74 @@
 /* wrap in a mobile container */
 
 * {
-    --button-padding: 50px;
+    --accent: #EB1024;
+
+    --button-padding-tb: 20px;
+    --button-padding-lr: 330px;
+    --button-text-size: 14px;
+
 }
 
 #app {
-    background-color: rgb(255, 0, 0);
+    /* background-color: rgb(255, 0, 0); */
 }
 
 /* search products */
 .button-grid {
     display: grid;
-    background-color: blue;
-    grid-template-areas: '. .' 'full full' 'search search'  ;
+    /* background-color: blue; */
+    grid-auto-columns: 1fr;
+    grid-template-areas: 'left right' 'full full' 'search search';
     grid-template-columns: '1fr 1fr';
     justify-content: center;
-    gap: 10px;
+    column-gap: 5px;
+    row-gap: 10px;
 }
 
-.front-button {
-    background-color: aqua;
+.filter-buttons {
+    /* background-color: var(--accent); */
     display: flex;
     justify-content: center;
-    padding-left: var(--button-padding);
-    padding-right: var(--button-padding);
+    align-items: center;
+
 }
 
-.front-button:nth-child(3) {
-    grid-area: full;
+/* .filter-buttons {
+
+} */
+
+
+
+.filter-buttons:nth-child(1) {
+    grid-area: left;
 }
+
+.filter-buttons:nth-child(2) {
+    grid-area: right;
+}
+
+.filter-buttons:nth-child(3) {
+    grid-area: full;
+    /* width: unset; */
+}
+
+.button-body {
+    background-color: var(--accent);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 55px;
+    border-radius: 4px;
+}
+
+.button-body>h4 {
+    padding: var(--button-padding-tb) auto;
+    font-size: var(--button-text-size);
+    color: #FFF;
+    margin-bottom: 0;
+}
+
 
 .search-area {
     grid-area: search;
@@ -43,14 +83,24 @@
 .showcase-pro-grid {
     display: grid;
     grid-template-columns: auto auto;
-    background-color: green;
 }
 
 .product-item {
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
+
+.product-item > h4 {
+    max-width: 180px;
+    text-align: center;
+}
+
+.showcase-pro-img {
+    max-width: 215px;
+}
+
 /* End Showcase products*/
 
 /*Big Link Area*/
@@ -123,8 +173,9 @@
 
 /* hours */
 .dealer-info-container {
-    background-color:chartreuse;
+    background-color: chartreuse;
 }
+
 /* end hours */
 
 /*quick-links*/
@@ -132,6 +183,7 @@
 .link-groups {
     background-color: cadetblue;
 }
+
 /*end quick-links*/
 
 

@@ -1,4 +1,5 @@
 
+
 function motorItemTemplate(obj) {
     const motorFrame = document.createElement('div');
     const productName = document.createElement('span');
