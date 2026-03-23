@@ -160,12 +160,20 @@
 .vehicle-carousel {
     display: flex;
     background-color: orange;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 .motor-frame {
     display: flex;
+    min-width: 100vw;
+
     flex-direction: column;
 }
+
+/*.motor-frame:not(.frame-0) {
+    display: none;
+}*/
 
 /* End Featured Vehicles */
 
