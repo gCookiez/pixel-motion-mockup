@@ -133,9 +133,13 @@
 /*End Promo*/
 
 /*Big Link Area*/
-.big-link-container {
-    background-color: yellow;
+.big-link-container > .test_ride {
+    background-image: repeating-linear-gradient(135deg, var(--accent), var(--accent) 2px, red 2px, red 8px) ;
 }
+.big-link-container > .parts__accessories {
+    background-image: repeating-linear-gradient(135deg, gray, gray 2px, black 2px, black 8px) ;
+}
+
 
 .big-link-item {
     display: flex;
@@ -143,6 +147,10 @@
     align-items: center;
     padding-top: 30px;
     padding-bottom: 30px;
+}
+
+.big-link-title {
+    color: #fff;
 }
 
 
