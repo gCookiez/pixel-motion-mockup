@@ -1,5 +1,5 @@
 
-const imagesContext = import.meta.glob('../../../public/*.png', {eager: true, import: 'default'});
+const imagesContext = import.meta.glob('../../../public/*.png', { eager: true, import: 'default' });
 
 const trimmedModules = Object.fromEntries(
   Object.entries(imagesContext).map(([path, module]) => [
@@ -9,35 +9,42 @@ const trimmedModules = Object.fromEntries(
 );
 
 
-function productGridItem(title, link) {
-    const productItem = document.createElement('div');
-    const productTitle = document.createElement('h4');
-    const imgLink = document.createElement('img');
-    const showLink = document.createElement('a');
-    //add container for title and link for proper alignment
+function productGridItem(title, link, itemClass) {
+  const productItem = document.createElement('div');
+  const imgLink = document.createElement('img');
+  const detailGroup = document.createElement('div')
+  const productTitle = document.createElement('h4');
+  const showLink = document.createElement('a');
 
-    showLink.setAttribute('href', '#');
-    productItem.classList.add('product-item');
-    productTitle.innerHTML = `${title ? title : 'PRODUCT'}`;
-    imgLink.setAttribute('src', link);
-    imgLink.classList.add('showcase-pro-img')
-    showLink.innerHTML = 'SHOP NOW';
 
-    productItem.append(imgLink, productTitle, showLink);
+  showLink.setAttribute('href', '#');
+  productItem.classList.add('product-item', itemClass);
+  productTitle.innerHTML = `${title ? title : 'PRODUCT'}`;
+  imgLink.setAttribute('src', link);
+  imgLink.classList.add('showcase-pro-img')
+  detailGroup.classList.add('details-group');
 
-    return productItem;
+
+
+  showLink.innerHTML = 'SHOP NOW';
+  detailGroup.append(productTitle, showLink);
+  productItem.append(imgLink, detailGroup );
+
+  return productItem;
 
 }
 
 
-const productGridContainer =  document.createElement('div');
+const productGridContainer = document.createElement('div');
 
-productGridContainer.classList.add('showcase-pro-grid');
+productGridContainer.classList.add('showcase-pro-grid', 'd-sm-flex');
 
 for (var [key, product] of Object.entries(trimmedModules)) {
-    const productCompile = productGridItem(key, product);
-    productGridContainer.append(productCompile);
+  const classVer = key.split(' ').join('_').toLowerCase();
+  const productCompile = productGridItem(key, product, classVer);
+  productGridContainer.append(productCompile);
 }
 
 export { productGridContainer };
 
+// adjust to query for tablet later
