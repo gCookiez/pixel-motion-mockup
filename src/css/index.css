@@ -264,6 +264,10 @@
     display: flex;
 }
 
+.review-box {
+    min-width: 100vw;
+}
+
 /* End Reviews */
 
 /* news letter*/
@@ -285,7 +289,32 @@
 
 /*end quick-links*/
 
+/* shared components */
+.carousel-wrapper {
+    min-width: 100vw;
+}
+.carousel-content {
+    display: flex;
+}
 
+.slide-count {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.ref-dot {
+    background-color: gray;
+    border-radius: 100px;
+    width: 5px;
+    aspect-ratio: 1;
+
+}
+
+.ref-dot.active{
+    background-color: black;
+}
+/* end shared components */
 
 
 /* End Mobile Media query */

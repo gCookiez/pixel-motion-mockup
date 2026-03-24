@@ -1,3 +1,4 @@
+import { carouselFiller } from '../recycle/carousel';
 import { trimmedModules } from '../recycle/trimmed-filenames';
 
 const imagesContext = import.meta.glob('../../../public/*.jpg', { eager: true, import: 'default' });
@@ -26,7 +27,7 @@ function motorItemTemplate(obj) {
 
 
     viewDetails.append(viewDetailsText);
-    motorFrame.classList.add('motor-frame', `frame-${obj.iter}`, 'p-5', 'pt-1');
+    motorFrame.classList.add('motor-frame', `frame-${obj.iter}`, 'pt-1');
     productDetailsCont.append(productName, productPrice, productSerial)
     motorFrame.append(img, productDetailsCont, viewDetails);
     return motorFrame;
@@ -37,6 +38,7 @@ function motorItemTemplate(obj) {
 const featuredVehicleContainer = document.createElement('div');
 const featuredVehiclesCarousel = document.createElement('div');
 featuredVehiclesCarousel.classList.add('vehicle-carousel');
+const {list, carouselModule} = new carouselFiller();
 const featuredTitle = document.createElement('h2');
 
 
@@ -76,8 +78,16 @@ featuredTitle.classList.add('mt-5', 'mb-3')
 for (var [i, obj] of Object.entries(products)) {
     obj.iter = i;
     const product = motorItemTemplate(obj);
-    featuredVehiclesCarousel.append(product);
+    carouselModule.addSlide(product)
+    
 }
+carouselModule.updateSlideCount();
+carouselModule.nextSlide();
+carouselModule.prevSlide();
+carouselModule.prevSlide();
+
+featuredVehiclesCarousel.append(list);
+
 
 featuredVehicleContainer.classList.add('featured-vehicle-area');
 featuredVehicleContainer.append(featuredTitle, featuredVehiclesCarousel);
