@@ -27,7 +27,7 @@ function motorItemTemplate(obj) {
 
 
     viewDetails.append(viewDetailsText);
-    motorFrame.classList.add('motor-frame', `frame-${obj.iter}`, 'pt-1');
+    motorFrame.classList.add('motor-frame', 'pt-1');
     productDetailsCont.append(productName, productPrice, productSerial)
     motorFrame.append(img, productDetailsCont, viewDetails);
     return motorFrame;
@@ -76,16 +76,12 @@ featuredTitle.classList.add('mt-5', 'mb-3')
 
 
 for (var [i, obj] of Object.entries(products)) {
-    obj.iter = i;
     const product = motorItemTemplate(obj);
-    carouselModule.addSlide(product)
+    carouselModule.addSlide(product, i)
     
 }
 carouselModule.updateSlideCount();
-carouselModule.nextSlide();
-carouselModule.prevSlide();
-carouselModule.prevSlide();
-
+// carouselModule.nextSlide();
 featuredVehiclesCarousel.append(list);
 
 

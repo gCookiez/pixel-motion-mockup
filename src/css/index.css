@@ -8,6 +8,11 @@
     --button-text-size: 14px;
     --button-details-text-size: 12px;
 
+    --color-cycle-1: #C2185B;
+    --color-cycle-2: #78909C;
+    --color-cycle-3: #0288D1;
+    --color-cycle-4: #512DA8;
+
 }
 
 #app {
@@ -111,11 +116,11 @@
     margin-top: 10px;
 }
 
-.details-group > h4 {
+.details-group>h4 {
     margin-bottom: 2px;
 }
 
-.rocket_3 > .showcase-pro-img {
+.rocket_3>.showcase-pro-img {
     transform: translateY(10px);
 }
 
@@ -134,11 +139,12 @@
 /*End Promo*/
 
 /*Big Link Area*/
-.big-link-container > .test_ride {
-    background-image: repeating-linear-gradient(135deg, var(--accent), var(--accent) 2px, red 2px, red 8px) ;
+.big-link-container>.test_ride {
+    background-image: repeating-linear-gradient(135deg, var(--accent), var(--accent) 2px, red 2px, red 8px);
 }
-.big-link-container > .parts__accessories {
-    background-image: repeating-linear-gradient(135deg, gray, gray 2px, black 2px, black 8px) ;
+
+.big-link-container>.parts__accessories {
+    background-image: repeating-linear-gradient(135deg, gray, gray 2px, black 2px, black 8px);
 }
 
 
@@ -158,7 +164,7 @@
 /*End Big Link Area*/
 
 /* Featured Vehicles */
-.featured-vehicle-area > h2 {
+.featured-vehicle-area>h2 {
     text-align: center;
 }
 
@@ -166,6 +172,7 @@
     display: flex;
     width: 100vw;
     overflow-x: hidden;
+    position: relative;
 }
 
 .motor-frame {
@@ -175,12 +182,12 @@
     flex-direction: column;
 }
 
-.motor-frame > img {
-    min-width: 350px;   
+.motor-frame>img {
+    min-width: 350px;
 }
 
 .product-details-cont {
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
@@ -193,7 +200,11 @@
     align-items: center;
 }
 
-.view-details-btn > span {
+.view-details-btn:hover {
+    cursor: pointer;
+}
+
+.view-details-btn>span {
     font-size: var(--button-details-text-size);
 }
 
@@ -244,11 +255,11 @@
     line-height: 150%;
 }
 
-.story-container > .promo-redirect-link {
+.story-container>.promo-redirect-link {
     width: 65%;
     border-color: #fff;
 }
- 
+
 
 
 
@@ -257,7 +268,7 @@
 /* Reviews */
 
 .review-container {
-    background-color: peachpuff;
+    background-color: #fff;
 }
 
 .review-carousel {
@@ -266,6 +277,56 @@
 
 .review-box {
     min-width: 100vw;
+
+}
+
+.review-box-wrapper {
+    background-color: #aaa;
+}
+
+.review-user-icon {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 100px;
+}
+
+.review-box:nth-child(4n + 1) > * .review-user-icon {
+    background-color: var(--color-cycle-1);
+}
+.review-box:nth-child(4n + 2) > * .review-user-icon {
+    background-color: var(--color-cycle-2);
+}
+.review-box:nth-child(4n + 3) > * .review-user-icon {
+    background-color: var(--color-cycle-3);
+}
+.review-box:nth-child(4n + 4) > * .review-user-icon {
+    background-color: var(--color-cycle-4);
+}
+
+.details-cont {
+    display: flex;
+    flex-direction: column;
+}
+
+.review-date {
+    font-size: 12px;
+}
+
+.review-user {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.review-user-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.review-user-icon > .initial-digit {
+    margin: 0;
+    font-size: 32px;
 }
 
 /* End Reviews */
@@ -291,16 +352,28 @@
 
 /* shared components */
 .carousel-wrapper {
-    min-width: 100vw;
+    width: 100vw;
+    position: relative;
 }
+
 .carousel-content {
     display: flex;
+    z-index: 99;
+    overflow-x: auto;
+    pointer-events: none;
+    scrollbar-width: none;
+}
+
+.carousel-content>* {
+    pointer-events: auto;
 }
 
 .slide-count {
     display: flex;
     justify-content: center;
     gap: 15px;
+    position: absolute;
+    justify-self: center;
 }
 
 .ref-dot {
@@ -311,9 +384,27 @@
 
 }
 
-.ref-dot.active{
+.ref-dot.active {
     background-color: black;
 }
+
+.slide-change-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    z-index: 100;
+    display: flex;
+}
+
+
+#left-slide-view,
+#right-slide-view {
+    width: 50vw;
+    height: 100%;
+}
+
 /* end shared components */
 
 

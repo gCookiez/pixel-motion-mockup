@@ -1,7 +1,21 @@
 export class carouselFiller {
     constructor() {
-        this.wrapper = document.createElement('div')
+        this.wrapper = document.createElement('div');
         this.content = document.createElement('div');
+
+        this.pointOverlay = document.createElement('div');
+        this.pointOverlay.classList.add('slide-change-overlay');
+
+        this.leftSlideClick = document.createElement('div');
+        this.leftSlideClick.setAttribute('id', 'left-slide-view');
+        this.rightSlideClick = document.createElement('div');
+        this.rightSlideClick.setAttribute('id', 'right-slide-view');
+
+        this.leftSlideClick.addEventListener('click', () => {this.prevSlide()});
+        this.rightSlideClick.addEventListener('click', () => {this.nextSlide()});
+
+        this.pointOverlay.append(this.leftSlideClick, this.rightSlideClick);
+
         this.slideCount = document.createElement('div');
         this.refDot = document.createElement('div');
         this.pointer = 0;
@@ -12,7 +26,7 @@ export class carouselFiller {
         this.slideCount.classList.add('slide-count', 'pt-4');
         this.refDot.classList.add('ref-dot');
 
-        this.wrapper.append(this.content, this.slideCount);
+        this.wrapper.append(this.pointOverlay, this.content, this.slideCount, );
         return { list: this.wrapper, carouselModule: this };
     }
 
@@ -24,6 +38,12 @@ export class carouselFiller {
         return this.readCount() <= 0;
     }
 
+    updatePointerPos() {
+        const checkFail = this.slideCount.querySelector('.active');
+        if (checkFail == null) return;
+        checkFail.classList.remove('active');
+        this.slideCount.children[this.pointer].classList.add('active');
+    }
 
     updateSlideCount() {
         this.slideCount.replaceChildren()
@@ -36,10 +56,15 @@ export class carouselFiller {
             this.slideCount.append(clone);
         }
 
-        this.slideCount.children[this.pointer].classList.add('active');
+        const checkFail = this.slideCount.querySelector('.active');
+        if (checkFail == null) {
+            this.slideCount.children[this.pointer].classList.add('active');
+        }
+
     }
 
-    addSlide(div) {
+    addSlide(div, iter) {
+        div.classList.add(`frame-${iter}`)
         this.content.append(div);
         this.updateSlideCount();
     }
@@ -47,7 +72,7 @@ export class carouselFiller {
     nextSlide() {
         if (this.checkCount() || this.content.children.length == 1) return;
 
-        this.readCount() % this.pointer + 1 == 0 ? this.pointer = 0 : this.pointer = this.pointer + 1;
+        (this.pointer + 1) % this.readCount() == 0 ? this.pointer = 0 : this.pointer = this.pointer + 1;
 
         this.changeSlide();
 
@@ -64,10 +89,11 @@ export class carouselFiller {
 
     changeSlide() {
         setTimeout(() => {
-            this.content.querySelector(`.frame-${this.pointer}`).scrollIntoView()
+            this.wrapper.querySelector(`.frame-${this.pointer}`).scrollIntoView({block: "center"})
+            this.updatePointerPos();
         })
     }
 
-
-
 }
+
+//consider media sizing
