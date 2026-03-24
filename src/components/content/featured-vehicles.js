@@ -10,30 +10,40 @@ const trimmedModules = Object.fromEntries(
 function motorItemTemplate(obj) {
     const motorFrame = document.createElement('div');
     const img = document.createElement('img')
+    const productDetailsCont = document.createElement('div');
     const productName = document.createElement('span');
     const productPrice = document.createElement('span');
     const productSerial = document.createElement('span');
-    const viewDetails = document.createElement('a');
-
+    const viewDetails = document.createElement('div');
+    const viewDetailsText = document.createElement('span');
     console.log(obj.imgPath); 
 
 
     img.setAttribute('src', obj.imgPath);
+    productDetailsCont.classList.add('product-details-cont', 'mt-3', 'mb-3')
     productName.innerHTML = `${obj.name}`;
     productPrice.innerHTML = `Price: ${obj.price}`;
     productSerial.innerHTML = `Stock#: ${obj.serial}`;
-    viewDetails.innerHTML = `View Details`;
+    viewDetails.classList.add('view-details-btn', 'p-1', 'ps-3', 'pe-3')
+    viewDetailsText.innerHTML = `View Details`;
 
-    motorFrame.classList.add('motor-frame', `frame-${obj.iter}`);
 
-    motorFrame.append(img, productName, productPrice, productSerial, viewDetails);
+    viewDetails.append(viewDetailsText);
+    motorFrame.classList.add('motor-frame', `frame-${obj.iter}`, 'p-5', 'pt-1');
+    productDetailsCont.append(productName, productPrice, productSerial)
+    motorFrame.append(img, productDetailsCont, viewDetails);
     return motorFrame;
 }
+
+// create carousel function
 
 const featuredVehicleContainer = document.createElement('div');
 const featuredVehiclesCarousel = document.createElement('div');
 featuredVehiclesCarousel.classList.add('vehicle-carousel');
 const featuredTitle = document.createElement('h2');
+
+
+
 const products = [
     {
         imgPath: trimmedModules["USED 2018 TRIUMPH STREET TRIPLE R"],
@@ -60,8 +70,10 @@ const products = [
         serial: "TCR277"
     },
 ]
-featuredTitle.innerHTML = 'FEATURED VEHICLES';
 
+
+featuredTitle.innerHTML = 'FEATURED VEHICLES';
+featuredTitle.classList.add('mt-5', 'mb-3')
 
 
 for (var [i, obj] of Object.entries(products)) {

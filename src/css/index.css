@@ -6,6 +6,7 @@
     --button-padding-tb: 20px;
     --button-padding-lr: 330px;
     --button-text-size: 14px;
+    --button-details-text-size: 12px;
 
 }
 
@@ -157,9 +158,12 @@
 /*End Big Link Area*/
 
 /* Featured Vehicles */
+.featured-vehicle-area > h2 {
+    text-align: center;
+}
+
 .vehicle-carousel {
     display: flex;
-    background-color: orange;
     width: 100vw;
     overflow-x: hidden;
 }
@@ -167,8 +171,30 @@
 .motor-frame {
     display: flex;
     min-width: 100vw;
-
+    align-items: center;
     flex-direction: column;
+}
+
+.motor-frame > img {
+    min-width: 350px;   
+}
+
+.product-details-cont {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.view-details-btn {
+    border: 2px solid black;
+    border-radius: 18.03px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.view-details-btn > span {
+    font-size: var(--button-details-text-size);
 }
 
 /*.motor-frame:not(.frame-0) {
