@@ -1,11 +1,8 @@
+import { trimmedModules } from '../recycle/trimmed-filenames';
+
 const imagesContext = import.meta.glob('../../../public/*.jpg', { eager: true, import: 'default' });
 
-const trimmedModules = Object.fromEntries(
-  Object.entries(imagesContext).map(([path, module]) => [
-    path.slice(path.lastIndexOf('/') + 1, -3).split('_').join(" ").toUpperCase().replace('.', ''), // Trims './dir/' and '.js'
-    module
-  ])
-);
+const trimmedModule = trimmedModules(imagesContext);
 
 function motorItemTemplate(obj) {
     const motorFrame = document.createElement('div');
@@ -46,25 +43,25 @@ const featuredTitle = document.createElement('h2');
 
 const products = [
     {
-        imgPath: trimmedModules["USED 2018 TRIUMPH STREET TRIPLE R"],
+        imgPath: trimmedModule["USED 2018 TRIUMPH STREET TRIPLE R"],
         name: "Used 2018 Triumph STREET TRIPLE R",
         price: "$6,895",
         serial: "TCR297B"
     },
     {
-        imgPath: trimmedModules["TRIUMPH STREET TRIPLE R 01"],
+        imgPath: trimmedModule["TRIUMPH STREET TRIPLE R 01"],
         name: "New 2024 Triumph STREET TRIPLE R",
         price: "$9,445",
         serial: "TCR271"
     },
     {
-        imgPath: trimmedModules["TRIUMPH STREET TRIPLE R 02"],
+        imgPath: trimmedModule["TRIUMPH STREET TRIPLE R 02"],
         name: "New 2024 Triumph STREET TRIPLE R",
         price: "$9,695",
         serial: "TCR270"
     },
     {
-        imgPath: trimmedModules["TRIUMPH STREET TRIPLE R 02"],
+        imgPath: trimmedModule["TRIUMPH STREET TRIPLE R 02"],
         name: "New 2024 Triumph STREET TRIPLE R",
         price: "$9,695",
         serial: "TCR277"

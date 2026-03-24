@@ -1,12 +1,8 @@
+import { trimmedModules } from '../recycle/trimmed-filenames';
 
 const imagesContext = import.meta.glob('../../../public/*.png', { eager: true, import: 'default' });
 
-const trimmedModules = Object.fromEntries(
-  Object.entries(imagesContext).map(([path, module]) => [
-    path.slice(path.lastIndexOf('/') + 1, -3).split('_').join(" ").toUpperCase().replace('.', ''), // Trims './dir/' and '.js'
-    module
-  ])
-);
+const trimmedModule = trimmedModules(imagesContext)
 
 
 function productGridItem(title, link, itemClass) {
@@ -39,7 +35,7 @@ const productGridContainer = document.createElement('div');
 
 productGridContainer.classList.add('showcase-pro-grid', 'd-sm-flex');
 
-for (var [key, product] of Object.entries(trimmedModules)) {
+for (var [key, product] of Object.entries(trimmedModule)) {
   const classVer = key.split(' ').join('_').toLowerCase();
   const productCompile = productGridItem(key, product, classVer);
   productGridContainer.append(productCompile);

@@ -1,6 +1,7 @@
 
 function teamMemberHeads() {
     const staffHead = document.createElement('div');
+    staffHead.classList.add('staff-head')
     staffHead.innerHTML = 'TEMP';
     return staffHead;
 }
@@ -12,6 +13,8 @@ const teamCarousel = document.createElement('div');
 
 const teamSize = 3;
 
+
+//add additional container for padding
 teamContainer.classList.add('team-container');
 teamMeet.classList.add('meet-team-btn');
 teamCarousel.classList.add('team-carousel');
