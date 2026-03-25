@@ -1,27 +1,28 @@
+import { containerTemplate } from "../recycle/class-list";
+import { bootstrapRows } from '../recycle/rows-and-columns'
 function quickLinksTemplate(obj) {
-    const quickLinkGroup = document.createElement("div");
-    const quickLinkTitle = document.createElement("h2");
-    const quickLinks = document.createElement("div");
+        const quickLinkGroup = document.createElement("div");
+        const quickLinkTitle = document.createElement("h2");
+        const quickLinks = bootstrapRows('quick-links pt-3 pb-5');
 
-    quickLinkGroup.classList.add('quick-link-group')
-    quickLinkTitle.classList.add('quick-link-title')
-    quickLinks.classList.add('quick-links')
+        quickLinkGroup.classList.add('quick-link-group')
+        quickLinkTitle.classList.add('quick-link-title')
 
-    quickLinkTitle.innerHTML = `${obj.title}`;
+        quickLinkTitle.innerHTML = `${obj.title}`;
 
-    for (var link of obj.links) {
-        const quickItem = document.createElement("div");
-        quickItem.innerHTML = `${link}`;
-        quickLinks.append(quickItem);
+        for (var link of obj.links) {
+            const quickItem = document.createElement("span");
+            quickItem.innerHTML = `${link}`;
+            quickLinks.append(quickItem);
+        }
+
+        quickLinkGroup.append(quickLinkTitle, quickLinks);
+
+        return quickLinkGroup;
     }
 
-    quickLinkGroup.append(quickLinkTitle, quickLinks);
-
-    return quickLinkGroup;
-}
-
 const linkgroups = document.createElement('div');
-linkgroups.classList.add('link-groups')
+linkgroups.classList.add('link-groups', ...containerTemplate('list'))
 
 const links = [
     {

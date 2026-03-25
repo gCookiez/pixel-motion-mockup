@@ -51,8 +51,6 @@ const reviewCarousel = document.createElement("div");
 const {list, carouselModule} = new carouselFiller();
 const reviewTitle = document.createElement("h2");
 
-const colorCycle = ["#C2185B", "#78909C", "#0288D1", "#512DA8"]
-
 
 const reviews = [
     {
@@ -86,10 +84,10 @@ const reviews = [
 
 reviewContainer.classList.add("review-container");
 reviewCarousel.classList.add("review-carousel");
+reviewTitle.classList.add("review-title", "mt-5", "mb-3");
 reviewTitle.innerHTML = `FEATURED REVIEWS`;
 
 for (var [iter, review] of Object.entries(reviews)) {
-    review.color = colorCycle[parseInt(iter) % 4];
     carouselModule.addSlide(reviewBoxTemplate(review), iter)
 }
 

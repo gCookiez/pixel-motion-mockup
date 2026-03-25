@@ -2,6 +2,7 @@
 
 * {
     --accent: #EB1024;
+    --sub-accent: #e70033;
 
     --button-padding-tb: 20px;
     --button-padding-lr: 330px;
@@ -12,6 +13,11 @@
     --color-cycle-2: #78909C;
     --color-cycle-3: #0288D1;
     --color-cycle-4: #512DA8;
+
+    --footer-bg: #282828;
+
+    --border-bottom: 2px solid;
+    --vr-color: #DF203A;
 
 }
 
@@ -132,7 +138,7 @@
 }
 
 .promo-redirect-link {
-    border-bottom: 2px solid black;
+    border-bottom: var(--border-bottom) black;
     width: 75%;
 }
 
@@ -329,26 +335,120 @@
     font-size: 32px;
 }
 
+.review-title {
+    text-align: center;
+}
+
 /* End Reviews */
 
 /* news letter*/
+
+.newsletter-container {
+    background-color: var(--sub-accent);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap:30px;
+    color: #fff;
+}
+
+.newsletter-submit > .button-body {
+    background-color: #fff;
+}
+
+.newsletter-container > .promo-redirect-link {
+    border-color: #fff;
+    width: 100%;
+}
+
+.newsletter-submit > * h4{
+    color: #000;
+
+}
 
 /* end new letter */
 
 /* hours */
 .dealer-info-container {
-    background-color: chartreuse;
+    background-color: var(--footer-bg);
+    color: #fff
 }
+
+.dealer-address {
+    width: 60%;
+}
+
+.dealer-first-row {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    gap: 25px;
+    border-bottom: var(--border-bottom) red ;
+}
+
+.sub-link {
+    font-size: 18px;
+}
+
+.row.timeslot-area {
+    gap: 20px;
+}
+
+/* .row.schedules-list {
+    justify-content: space-between;
+} */
+.schedules-list {
+    gap: 2px;
+    
+}
+
+.row.schedules-list > .row {
+    padding-right: 0;
+    justify-content: space-between;
+    
+}
+
+.row.schedules-list > * .col.sched {
+    margin-left:0;
+}
+
 
 /* end hours */
 
 /*quick-links*/
-
-.link-groups {
-    background-color: cadetblue;
+.quick-links {
+    gap: 2px;
 }
 
 /*end quick-links*/
+
+/* dev-info*/
+.dev-footer {
+    background-color: var(--footer-bg);
+    color: #fff;
+    justify-content: center;
+    align-content: center;
+}
+
+.copyright-msg, .dev-quick-links{
+    font-size: 12px;
+    text-align: center;
+}
+
+.dev-quick-links {
+    width: 45%;
+}
+
+.dev-quick-links > .vr {
+    background-color: var(--vr-color);
+}
+
+.dev-msg {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
 
 /* shared components */
 .carousel-wrapper {
@@ -396,6 +496,10 @@
     height: 80%;
     z-index: 100;
     display: flex;
+}
+
+.hidden {
+    display:none;
 }
 
 

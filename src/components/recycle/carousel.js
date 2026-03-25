@@ -89,7 +89,8 @@ export class carouselFiller {
 
     changeSlide() {
         setTimeout(() => {
-            this.wrapper.querySelector(`.frame-${this.pointer}`).scrollIntoView({block: "center"})
+            this.wrapper.querySelector(`.frame-${this.pointer}`).classList.remove('hidden');
+            this.wrapper.querySelectorAll(`.carousel-content > :not(.frame-${this.pointer})`).forEach((v,k) => v.classList.add('hidden'));
             this.updatePointerPos();
         })
     }
