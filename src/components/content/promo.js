@@ -1,3 +1,8 @@
+import { trimmedModules } from "../recycle/trimmed-filenames";
+import { containerTemplate } from "../recycle/class-list";
+const imagesContext = import.meta.glob('../../../public/promo.jpg', { eager: true, import: 'default' });
+const trimmedModule = trimmedModules(imagesContext);
+
 function promoButton(title) {
 	const promoButton = document.createElement('div');
 	const promoButtonTitle = document.createElement('h3');
@@ -10,11 +15,14 @@ function promoButton(title) {
 
 
 const promoContainer = document.createElement('div');
+const promoOverlay = document.createElement('div');
 const promoTitle = document.createElement('h1');
 const promoLinks = document.createElement('div')
 const promoLinkTitles = ['PROMOTIONS', 'EVENTS'];
 
-promoContainer.classList.add('promo-container', 'd-flex', 'flex-column', 'p-5', 'mt-3', 'mb-3');
+promoContainer.classList.add('promo-container', 'd-flex', 'flex-column', 'mt-3');
+promoOverlay.classList.add('promo-overlay', ...containerTemplate('list'))
+promoContainer.setAttribute('style', `background: url(${trimmedModule['PROMO']})`)
 
 promoTitle.innerHTML = `VIEW CURRENT PROMOTIONS AND EVENTS`;
 promoTitle.classList.add('promo-title');
@@ -25,7 +33,7 @@ for (var promoLink of promoLinkTitles) {
 	promoLinks.append(iterPromoLink);
 }
 
-
-promoContainer.append(promoTitle, promoLinks);
+promoOverlay.append(promoTitle, promoLinks)
+promoContainer.append(promoOverlay);
 
 export { promoContainer };

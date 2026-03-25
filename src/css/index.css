@@ -4,6 +4,8 @@
     --accent: #EB1024;
     --sub-accent: #e70033;
 
+    --tp-color: #00000099;
+
     --button-padding-tb: 20px;
     --button-padding-lr: 330px;
     --button-text-size: 14px;
@@ -138,9 +140,20 @@
 }
 
 .promo-redirect-link {
-    border-bottom: var(--border-bottom) black;
+    border-bottom: var(--border-bottom) #fff;
     width: 75%;
 }
+
+.promo-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: var(--tp-color);
+}
+
+.promo-overlay > *{
+    color: #fff;
+}
+
 
 /*End Promo*/
 

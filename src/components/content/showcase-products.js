@@ -1,6 +1,6 @@
 import { trimmedModules } from '../recycle/trimmed-filenames';
 
-const imagesContext = import.meta.glob('../../../public/*.png', { eager: true, import: 'default' });
+const imagesContext = import.meta.glob('../../../public/moto-grid/*.png', { eager: true, import: 'default' });
 
 const trimmedModule = trimmedModules(imagesContext)
 

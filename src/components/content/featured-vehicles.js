@@ -1,7 +1,7 @@
 import { carouselFiller } from '../recycle/carousel';
 import { trimmedModules } from '../recycle/trimmed-filenames';
 
-const imagesContext = import.meta.glob('../../../public/*.jpg', { eager: true, import: 'default' });
+const imagesContext = import.meta.glob('../../../public/moto-carousel/*.jpg', { eager: true, import: 'default' });
 
 const trimmedModule = trimmedModules(imagesContext);
 
