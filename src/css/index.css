@@ -4,8 +4,11 @@
     --accent: #EB1024;
     --sub-accent: #e70033;
 
+    --meet-team-text-color:#565656;
+
     --tp-color: #00000099;
 
+    --tp-button-color: #FFFFFF4D;
     --button-padding-tb: 20px;
     --button-padding-lr: 330px;
     --button-text-size: 14px;
@@ -48,23 +51,25 @@
 
 }
 
-/* .filter-buttons {
-
-} */
-
-
-
 .filter-buttons:nth-child(1) {
     grid-area: left;
 }
 
 .filter-buttons:nth-child(2) {
     grid-area: right;
+    background-color: var(--tp-button-color);
+
 }
 
 .filter-buttons:nth-child(3) {
     grid-area: full;
     /* width: unset; */
+}
+
+.filter-buttons:nth-child(2) > .button-body,
+.filter-buttons:nth-child(3) > .button-body {
+    background-color: var(--tp-button-color);
+
 }
 
 .button-body {
@@ -88,9 +93,19 @@
 .search-area {
     grid-area: search;
     background-color: white;
-    height: 30px;
+    height: 55px;
     width: 100%;
 }
+
+.search-placeholder {
+    font-size: 14px;
+}
+
+.main-page-title {
+    color: #fff;
+    font-weight: 700;
+}
+
 
 /* End search products */
 
@@ -98,7 +113,7 @@
 .showcase-pro-grid {
     display: grid;
     grid-template-columns: auto auto;
-    row-gap: 10px;
+    row-gap: 15px;
     /* max-width: 430px; */
 }
 
@@ -236,12 +251,27 @@
 /*Meet the Team*/
 
 .team-container {
-    background-color: purple;
+    background-color: var(--footer-bg);
+}
+
+.team-title {
+    color: #fff;
 }
 
 .meet-team-btn {
-    border: 1px solid black;
-    height: 30px;
+    width: 200px;
+}
+
+.meet-team-btn > .button-body {
+    height: 40px;
+    width: 85%;
+    background-color: #fff;
+    color: var(--meet-team-text-color);
+}
+
+.meet-team-btn > .button-body > h4 {
+    color: var(--meet-team-text-color);
+
 }
 
 .team-carousel {
@@ -252,7 +282,10 @@
 
 .staff-head {
     min-width: 50vw;
+}
 
+.flex-team {
+    display: flex;
 }
 
 /*End Meet the Team*/
@@ -485,6 +518,7 @@
     display: flex;
     justify-content: center;
     gap: 15px;
+    width: 100%;
     position: absolute;
     justify-self: center;
 }
@@ -512,7 +546,7 @@
 }
 
 .hidden {
-    display:none;
+    display:none !important;
 }
 
 
