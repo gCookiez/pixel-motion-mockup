@@ -1,5 +1,5 @@
 export class carouselFiller {
-    constructor() {
+    constructor(light) {
         this.wrapper = document.createElement('div');
         this.content = document.createElement('div');
 
@@ -8,8 +8,23 @@ export class carouselFiller {
 
         this.leftSlideClick = document.createElement('div');
         this.leftSlideClick.setAttribute('id', 'left-slide-view');
+        this.leftSlideClick.classList.add('d-flex', 'ps-4', 'justify-content-start', 'align-items-center');
+
         this.rightSlideClick = document.createElement('div');
         this.rightSlideClick.setAttribute('id', 'right-slide-view');
+        this.rightSlideClick.classList.add('d-flex', 'pe-4', 'justify-content-end', 'align-items-center');
+
+        this.leftSlideArrow = document.createElement('div');
+        this.rightSlideArrow = document.createElement('div');
+
+        this.leftSlideArrow.classList.add('left-slide-arrow');
+        this.rightSlideArrow.classList.add('right-slide-arrow');
+
+        this.leftSlideClick.append(this.leftSlideArrow)
+        this.rightSlideClick.append(this.rightSlideArrow)
+
+        this.leftSlideArrow.innerHTML = '<'
+        this.rightSlideArrow.innerHTML = '>'
 
         this.leftSlideClick.addEventListener('click', () => {this.prevSlide()});
         this.rightSlideClick.addEventListener('click', () => {this.nextSlide()});
@@ -25,6 +40,8 @@ export class carouselFiller {
         this.content.classList.add('carousel-content');
         this.slideCount.classList.add('slide-count', 'pt-4');
         this.refDot.classList.add('ref-dot');
+
+        light || light != undefined ? this.refDot.classList.add('light') : false;
 
         this.wrapper.append(this.pointOverlay, this.content, this.slideCount, );
         return { list: this.wrapper, carouselModule: this };

@@ -1,13 +1,12 @@
 import { trimmedModules } from '../recycle/trimmed-filenames';
+import dealerLogo from '../../../public/dealer_logo.png'
 const imagesContext = import.meta.glob('../../../public/bg-*.jpg', { eager: true, import: 'default' });
 
 const images = trimmedModules(imagesContext);
 
-console.log(images);
-
-
 function storyTemplate(obj) {
     const storyContainer = document.createElement('div');
+    const storyDealerLogo = document.createElement('img')
     const storyTitle = document.createElement('h1');
     const storyDesc = document.createElement('p');
     const storyLinkCont = document.createElement('div');
@@ -15,6 +14,8 @@ function storyTemplate(obj) {
 
     storyContainer.classList.add('story-container', 'pt-5', 'pb-5');
     storyContainer.setAttribute('style', `background-image: url(${obj.bg})`)
+    storyDealerLogo.classList.add('story-dealer-logo', 'mb-4');
+    storyDealerLogo.setAttribute('src', dealerLogo);
     storyTitle.innerHTML = `${obj.title}`;
     storyDesc.innerHTML = `${obj.story}`;
     storyDesc.classList.add('story-desc', 'mt-2', 'mb-5', 'p-3')
@@ -22,7 +23,7 @@ function storyTemplate(obj) {
     storyLinkCont.classList.add('promo-redirect-link')
 
     storyLinkCont.append(storyLink)
-    storyContainer.append(storyTitle, storyDesc, storyLinkCont);
+    storyContainer.append(storyDealerLogo, storyTitle, storyDesc, storyLinkCont);
 
     return storyContainer;
 }

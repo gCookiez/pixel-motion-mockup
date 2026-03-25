@@ -14,7 +14,6 @@ function motorItemTemplate(obj) {
     const productSerial = document.createElement('span');
     const viewDetails = document.createElement('div');
     const viewDetailsText = document.createElement('span');
-    console.log(obj.imgPath); 
 
 
     img.setAttribute('src', obj.imgPath);

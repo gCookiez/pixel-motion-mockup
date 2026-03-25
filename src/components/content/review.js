@@ -2,7 +2,6 @@ import { carouselFiller } from "../recycle/carousel";
 import { bootstrapRows, bootstrapColumns } from "../recycle/rows-and-columns";
 
 function reviewBoxTemplate(obj) {
-    console.log(obj.color);
     const reviewBoxContainer = document.createElement('div');
     const reviewBoxWrapper = document.createElement('div');
     
