@@ -7,9 +7,12 @@
     --meet-team-text-color:#565656;
     --meet-team-head: #D9D9D9;
 
+    --review-bg: #f4f4f4;
+    --read-more-color: #7A7A7A;
+
     --tp-color: #00000099;
 
-    --tp-button-color: #FFFFFF4D;
+    --tp-button-color: #d9d9d94d;
     --button-padding-tb: 20px;
     --button-padding-lr: 330px;
     --button-text-size: 14px;
@@ -24,6 +27,7 @@
 
     --border-bottom: 2px solid;
     --vr-color: #DF203A;
+    --promo-point: #E70033;
 
 
 }
@@ -36,6 +40,28 @@
 .hero-logo {
     width: 150px;
     height: 30px;
+}
+
+.menu-icon.location {
+    width: 28px;
+    height: 28px;
+    order: 1
+}
+
+.menu-icon.contact {
+    width: 22px;
+    height: 22px;
+    order: 2
+}
+
+.menu-icon.search {
+    width: 22px;
+    height: 22px;
+    order: 3
+}
+.menu-icon.ham {
+    width: 32px;
+    height: 21px;
 }
 
 /* search products */
@@ -340,7 +366,7 @@
 /* Reviews */
 
 .review-container {
-    background-color: #fff;
+    background-color: #FFF;
 }
 
 .review-carousel {
@@ -353,7 +379,7 @@
 }
 
 .review-box-wrapper {
-    background-color: #aaa;
+    background-color: var(--review-bg);
 }
 
 .review-user-icon {
@@ -403,6 +429,15 @@
 
 .review-title {
     text-align: center;
+}
+
+.star-icon, .g-logo {
+    width:20px;
+    height: 20px;
+}
+
+.read-more {
+    color: var(--read-more-color);
 }
 
 /* End Reviews */
@@ -484,6 +519,11 @@
 /*quick-links*/
 .quick-links {
     gap: 2px;
+}
+
+.quick-link-title {
+    color: var(--sub-accent);
+    font-size: 24px;
 }
 
 /*end quick-links*/
@@ -596,6 +636,10 @@
 .slide-change-overlay:hover > * .left-slide-arrow,
 .slide-change-overlay:hover > * .right-slide-arrow {
     display: flex;
+}
+
+.promo-redirect-link.red-point > * .promo-point {
+    color: var(--promo-point)
 }
 
 /* end shared components */

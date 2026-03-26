@@ -1,4 +1,5 @@
 import { trimmedModules } from '../recycle/trimmed-filenames';
+import { underLineButton } from '../recycle/non-standard-buttons';
 import dealerLogo from '../../../public/dealer_logo.png'
 const imagesContext = import.meta.glob('../../../public/bg-*.jpg', { eager: true, import: 'default' });
 
@@ -9,8 +10,7 @@ function storyTemplate(obj) {
     const storyDealerLogo = document.createElement('img')
     const storyTitle = document.createElement('h1');
     const storyDesc = document.createElement('p');
-    const storyLinkCont = document.createElement('div');
-    const storyLink = document.createElement('h3');
+    const storyLinkCont = underLineButton('red-point', obj.link)
 
     storyContainer.classList.add('story-container', 'pt-5', 'pb-5');
     storyContainer.setAttribute('style', `background-image: url(${obj.bg})`)
@@ -19,10 +19,7 @@ function storyTemplate(obj) {
     storyTitle.innerHTML = `${obj.title}`;
     storyDesc.innerHTML = `${obj.story}`;
     storyDesc.classList.add('story-desc', 'mt-2', 'mb-5', 'p-3')
-    storyLink.innerHTML = `${obj.link}`;
-    storyLinkCont.classList.add('promo-redirect-link')
 
-    storyLinkCont.append(storyLink)
     storyContainer.append(storyDealerLogo, storyTitle, storyDesc, storyLinkCont);
 
     return storyContainer;

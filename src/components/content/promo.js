@@ -1,18 +1,8 @@
 import { trimmedModules } from "../recycle/trimmed-filenames";
 import { containerTemplate } from "../recycle/class-list";
+import { underLineButton } from "../recycle/non-standard-buttons";
 const imagesContext = import.meta.glob('../../../public/promo.jpg', { eager: true, import: 'default' });
 const trimmedModule = trimmedModules(imagesContext);
-
-function promoButton(title) {
-	const promoButton = document.createElement('div');
-	const promoButtonTitle = document.createElement('h3');
-
-	promoButtonTitle.innerHTML = `${title ? title : 'LINK'}`;
-	promoButton.classList.add("promo-redirect-link", 'p-1', 'ps-0', 'mb-3');
-	promoButton.append(promoButtonTitle);
-	return promoButton;
-}
-
 
 const promoContainer = document.createElement('div');
 const promoOverlay = document.createElement('div');
@@ -29,7 +19,7 @@ promoTitle.classList.add('promo-title');
 promoLinks.classList.add('promo-links-container', 'mt-3');
 
 for (var promoLink of promoLinkTitles) {
-	const iterPromoLink = promoButton(promoLink);
+	const iterPromoLink = underLineButton('p-1 ps-0 mb-3', promoLink);
 	promoLinks.append(iterPromoLink);
 }
 
