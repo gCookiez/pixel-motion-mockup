@@ -1,6 +1,6 @@
 import { multipleClassList } from "../recycle/class-list";
 import { bootstrapRows, bootstrapColumns } from "../recycle/rows-and-columns";
-import dealerLogo from '../../../public/dealer_logo.png'
+import dealerLogo from '@public/dealer_logo.png'
 
 function storeHoursTemplate(obj) {
     const storeHoursContainer = document.createElement("div");

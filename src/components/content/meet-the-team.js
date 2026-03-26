@@ -1,8 +1,8 @@
-import { carouselFiller } from '../recycle/carousel';
-import { containerTemplate } from '../recycle/class-list';
-import { bootstrapRows, bootstrapColumns} from '../recycle/rows-and-columns'
-import {shopButtons} from '../recycle/non-standard-buttons';
-import defIcon from '../../../public/pic.png';
+import { carouselFiller } from '@recycle/carousel';
+import { containerTemplate } from '@recycle/class-list';
+import { bootstrapRows, bootstrapColumns} from '@recycle/rows-and-columns'
+import {shopButtons} from '@recycle/non-standard-buttons';
+import defIcon from '@public/pic.png';
 
 function teamMemberHeads() {
     const staffHeadCont = document.createElement('div');

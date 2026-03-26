@@ -1,9 +1,9 @@
 import * as bootstrap from 'bootstrap';
 import { bootstrapColumns, bootstrapRows } from '../recycle/rows-and-columns';
 import { trimmedModules } from '../recycle/trimmed-filenames';
-import heroLogo from '../../../public/dealer_logo.png'
-import hamIcon from '../../../public/hamburger.png'
-const imagesContext = import.meta.glob('../../../public/menu-icons/*.png', { eager: true, import: 'default' });
+import heroLogo from '@public/dealer_logo.png'
+import hamIcon from '@public/hamburger.png'
+const imagesContext = import.meta.glob('@public/menu-icons/*.png', { eager: true, import: 'default' });
 const trimmedModule = trimmedModules(imagesContext);
 
 console.log(trimmedModule);

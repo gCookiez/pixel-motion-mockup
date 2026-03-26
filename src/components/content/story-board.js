@@ -1,7 +1,7 @@
 import { trimmedModules } from '../recycle/trimmed-filenames';
 import { underLineButton } from '../recycle/non-standard-buttons';
-import dealerLogo from '../../../public/dealer_logo.png'
-const imagesContext = import.meta.glob('../../../public/bg-*.jpg', { eager: true, import: 'default' });
+import dealerLogo from '@public/dealer_logo.png'
+const imagesContext = import.meta.glob('@public/bg-*.jpg', { eager: true, import: 'default' });
 
 const images = trimmedModules(imagesContext);
 

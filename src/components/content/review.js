@@ -1,7 +1,7 @@
 import { carouselFiller } from "../recycle/carousel";
 import { bootstrapRows, bootstrapColumns } from "../recycle/rows-and-columns";
-import star from '../../../public/star.png'
-import gLogo from '../../../public/Google.png'
+import star from '@public/star.png'
+import gLogo from '@public/Google.png'
 
 function reviewRating(count) {
     const reviewContainer = bootstrapRows('review-rating p-0 ps-2 gap-1 mt-3 mb-3');
