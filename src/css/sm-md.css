@@ -48,8 +48,8 @@
     display: grid;
     /* background-color: blue; */
     grid-auto-columns: 1fr;
-    grid-template-areas: 'left right' 'full full' 'search search';
-    grid-template-columns: '1fr 1fr';
+    grid-template-areas: 'search search search' 'left right full';
+    grid-template-columns: '1fr 1fr 1fr';
     justify-content: center;
     column-gap: 5px;
     row-gap: 10px;
@@ -123,8 +123,7 @@
 
 /*video snippet*/
 .video-snippet {
-    height: 238px;
-    overflow-y: hidden;
+    display: none;
 }
 
 .screen-shot {
@@ -138,8 +137,8 @@
 /* Showcase products*/
 .showcase-pro-grid {
     display: grid;
-    grid-template-columns: auto auto;
-    row-gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     /* max-width: 430px; */
 }
 
@@ -157,7 +156,6 @@
 
 .details-group {
     display: flex;
-    max-width: 150px;
     height: 100%;
     flex-direction: column;
     text-align: center;
@@ -198,28 +196,30 @@
 .promo-container {
     background-repeat: no-repeat;
     background-size: cover;
-    
+
 }
 
 
 /*End Promo*/
 
 /*Big Link Area*/
-.big-link-container>.test_ride {
-    background-image: repeating-linear-gradient(135deg, var(--accent), var(--accent) 2px, red 2px, red 8px);
-}
+/* similar pattern, send to unified css*/
 
-.big-link-container>.parts__accessories {
-    background-image: repeating-linear-gradient(135deg, gray, gray 2px, black 2px, black 8px);
+.big-link-container {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
 }
 
 
 .big-link-item {
+    width: 100vw;
+    min-height: 214px;
+    height: 15vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
 }
 
 .big-link-title {
@@ -243,7 +243,7 @@
 
 .motor-frame {
     display: flex;
-    min-width: 100vw;
+    min-width: 33%;
     align-items: center;
     flex-direction: column;
 }
@@ -334,20 +334,41 @@
 .story-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    min-height: 75vh;
+    justify-content: flex-start;
+    min-height: 480;
     color: #fff;
 }
 
 .story-desc {
     text-justify: justify;
-    text-align: center;
     line-height: 150%;
 }
 
+.story-container:nth-child(odd) {
+    align-items: flex-end;
+    padding-right: var(--story-spacing-greater);
+    padding-left: var(--story-spacing-lesser);
+}
+
+.story-container:nth-child(odd) > .story-desc {
+    text-align: right;
+    padding-right: 0 !important;
+
+}
+
+.story-container:nth-child(even) {
+    align-items: flex-start;
+    padding-right: var(--story-spacing-lesser);
+    padding-left: var(--story-spacing-greater);
+}
+
+.story-container:nth-child(even) > .story-desc {
+    text-align: left;
+    padding-left: 0 !important;
+}
+
 .story-container>.promo-redirect-link {
-    width: 65%;
+    width: 35%;
     border-color: #fff;
 }
 
@@ -373,7 +394,7 @@
 }
 
 .review-box {
-    min-width: 100vw;
+    min-width: 33vw;
 
 }
 
@@ -460,22 +481,36 @@
     background-color: #fff;
 }
 
-.newsletter-container>.promo-redirect-link {
+.group-newsletter > .promo-redirect-link {
     border-color: #fff;
-    width: 100%;
+    width: 80%;
+}
+
+.group-newsletter > .newsletter-submit {
+    width: 15%;
 }
 
 .newsletter-submit>* h4 {
     color: #000;
-
 }
+
 
 /* end new letter */
 
 /* hours */
 .dealer-info-container {
     background-color: var(--footer-bg);
-    color: #fff
+    color: #fff;
+    display:flex;
+    justify-content: space-between;
+        gap: 10px;
+}
+
+.dealer-group-flex:nth-child(1) {
+    width: 35vw;
+}
+.dealer-group-flex:nth-child(2) {
+    width: 50vw;
 }
 
 .dealer-address {
@@ -612,8 +647,8 @@
     display: flex;
 }
 
-.hidden {
-    display: none !important;
+.hidden-carousel {
+    display: flex;
 }
 
 .left-slide-arrow,

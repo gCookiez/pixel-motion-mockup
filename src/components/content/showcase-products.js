@@ -33,7 +33,7 @@ function productGridItem(title, link, itemClass) {
 
 const productGridContainer = document.createElement('div');
 
-productGridContainer.classList.add('showcase-pro-grid', 'd-sm-flex');
+productGridContainer.classList.add('showcase-pro-grid');
 
 for (var [key, product] of Object.entries(trimmedModule)) {
   const classVer = key.split(' ').join('_').toLowerCase();

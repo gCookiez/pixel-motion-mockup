@@ -17,3 +17,16 @@ export function containerTemplate(type) {
     return strClass;
 
 }
+
+export function containerTemplateMd(type) {
+    var strClass = 'p-md-5 pe-md-1'
+    switch (type) {
+        case 'list' : strClass = strClass.split(" ");
+                      break;
+        case 'string' : ;
+        case 'default': strClass;      
+    }
+
+    return strClass;
+
+}

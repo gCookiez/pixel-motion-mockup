@@ -2,6 +2,7 @@
 
 * {
     --accent: #EB1024;
+    --sub-pattern-red: #d0002e;
     --sub-accent: #e70033;
 
     --meet-team-text-color: #565656;
@@ -29,15 +30,110 @@
     --vr-color: #DF203A;
     --promo-point: #E70033;
 
+    --story-spacing-greater: 3em;
+    --story-spacing-lesser: 1em;
+
 }
+
+.big-link-container>.test_ride {
+    background-image: repeating-linear-gradient(135deg, var(--sub-pattern-red), var(--sub-pattern-red) 2px, var(--accent) 2px, var(--accent) 8px);
+}
+
+.big-link-container>.parts__accessories {
+    background-image: repeating-linear-gradient(135deg, gray, gray 2px, black 2px, black 8px);
+}
+
 
 
 @include media-breakpoint-between(xs, sm) {
     @import "../css/xs-sm";
 }
+
+
+
 @include media-breakpoint-up(sm) {
     @import "../css/sm-md";
-    .video-snippet {
-        display: none;
+
+}
+
+@include media-breakpoint-between(sm, md) {
+    @import "../css/sm-md";
+
+    .dealer-info-container {
+        display: block;
+    }
+
+    .dealer-group-flex {
+        width: 100vw !important;
+    }
+
+    .motor-frame,
+    .review-box {
+        min-width: 100vw !important;
+    }
+
+    .motor-frame .hidden-carousel {
+        display: none !important;
+    }
+
+}
+
+
+@include media-breakpoint-up(md) {
+    @import "../css/sm-md";
+
+
+
+    .motor-frame>img {
+        min-width: 200px !important;
+        min-height: 200px !important;
+        max-width: 252px !important;
+        max-height: 250px !important;
+    }
+
+
+}
+
+@include media-breakpoint-between(md, lg) {
+
+    .motor-frame,
+    .review-box {
+        min-width: 33vw !important;
+    }
+
+
+
+}
+
+@include media-breakpoint-up(lg) {
+
+    .motor-frame,
+    .review-box {
+        min-width: 25vw !important;
+    }
+
+    
+}
+
+@include media-breakpoint-up(xl) {
+    .transform-footer {
+        display: flex;
+    }
+
+    .showcase-pro-grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .transform-footer>div {
+        width: 50vw;
+    }
+
+    .link-groups {
+        display: flex;
+    }
+
+    .quick-link-group {
+        width: 33vw
     }
 }

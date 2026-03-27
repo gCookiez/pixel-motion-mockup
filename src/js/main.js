@@ -15,10 +15,11 @@ import { newsLetterContainer } from '../components/content/newsletter';
 import { dealerInfoContainer } from '../components/footer/dealer-info';
 import { linkgroups } from '../components/footer/quick-links';
 import { devFooterContainer } from '../components/footer/pixel-motion';
+import { transformFooter } from '../components/footer/combined-footer';
 
 
 const header = [navBar];
 const content = [firstContainer, videoSnippet, productGridContainer, promoContainer, bigLinkAreaContainer, featuredVehicleContainer, teamContainer, storyContainer, reviewContainer, newsLetterContainer]
-const footer = [dealerInfoContainer, linkgroups, devFooterContainer]
+const footer = [transformFooter, devFooterContainer]
 // app.append(navDivSimple(), welcomeHero(), gridFilters());
 app.append(...header, ...content, ...footer);

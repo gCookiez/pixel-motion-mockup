@@ -55,35 +55,35 @@ export class carouselFiller {
         return this.readCount() <= 0;
     }
 
-    updatePointerPos() {
-        const checkFail = this.slideCount.querySelector('.active');
-        if (checkFail == null) return;
-        checkFail.classList.remove('active');
-        this.slideCount.children[this.pointer].classList.add('active');
-    }
+    // updatePointerPos() {
+    //     const checkFail = this.slideCount.querySelector('.active');
+    //     if (checkFail == null) return;
+    //     checkFail.classList.remove('active');
+    //     this.slideCount.children[this.pointer].classList.add('active');
+    // }
 
-    updateSlideCount() {
-        this.slideCount.replaceChildren()
+    // updateSlideCount() {
+    //     this.slideCount.replaceChildren()
 
-        if (this.checkCount()) return;
+    //     if (this.checkCount()) return;
 
 
-        for (var i = 0; i < this.content.children.length; i++) {
-            const clone = this.refDot.cloneNode(true);
-            this.slideCount.append(clone);
-        }
+    //     for (var i = 0; i < this.content.children.length; i++) {
+    //         const clone = this.refDot.cloneNode(true);
+    //         this.slideCount.append(clone);
+    //     }
 
-        const checkFail = this.slideCount.querySelector('.active');
-        if (checkFail == null) {
-            this.slideCount.children[this.pointer].classList.add('active');
-        }
+    //     const checkFail = this.slideCount.querySelector('.active');
+    //     if (checkFail == null) {
+    //         this.slideCount.children[this.pointer].classList.add('active');
+    //     }
 
-    }
+    // }
 
     addSlide(div, iter) {
         div.classList.add(`frame-${iter}`)
         this.content.append(div);
-        this.updateSlideCount();
+        // this.updateSlideCount();
     }
 
     nextSlide() {
@@ -106,9 +106,9 @@ export class carouselFiller {
 
     changeSlide() {
         setTimeout(() => {
-            this.wrapper.querySelector(`.frame-${this.pointer}`).classList.remove('hidden');
-            this.wrapper.querySelectorAll(`.carousel-content > :not(.frame-${this.pointer})`).forEach((v,k) => v.classList.add('hidden'));
-            this.updatePointerPos();
+            this.wrapper.querySelector(`.frame-${this.pointer}`).classList.remove('hidden-carousel');
+            this.wrapper.querySelectorAll(`.carousel-content > :not(.frame-${this.pointer})`).forEach((v,k) => v.classList.add('hidden-carousel'));
+            // this.updatePointerPos();
         })
     }
 

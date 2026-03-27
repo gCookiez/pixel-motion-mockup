@@ -204,14 +204,6 @@
 /*End Promo*/
 
 /*Big Link Area*/
-.big-link-container>.test_ride {
-    background-image: repeating-linear-gradient(135deg, var(--accent), var(--accent) 2px, red 2px, red 8px);
-}
-
-.big-link-container>.parts__accessories {
-    background-image: repeating-linear-gradient(135deg, gray, gray 2px, black 2px, black 8px);
-}
-
 
 .big-link-item {
     display: flex;
@@ -459,15 +451,19 @@
     background-color: #fff;
 }
 
-.newsletter-container>.promo-redirect-link {
+.group-newsletter > .promo-redirect-link {
     border-color: #fff;
     width: 100%;
 }
 
 .newsletter-submit>* h4 {
     color: #000;
-
 }
+
+.group-newsletter {
+    flex-direction: column;
+}
+
 
 /* end new letter */
 
@@ -611,7 +607,7 @@
     display: flex;
 }
 
-.hidden {
+.hidden-carousel {
     display: none !important;
 }
 

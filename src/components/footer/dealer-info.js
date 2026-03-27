@@ -18,9 +18,9 @@ function storeHoursTemplate(obj) {
     hoursTitle.innerHTML = `${obj.title}`
 
     for (var [day, timeSlot] of Object.entries(obj.timeSlots)) {
-        const row = bootstrapRows(day);
-        const dayCol = bootstrapColumns('day col-7 col-sm-8')
-        const timeCol = bootstrapColumns('sched ps-4 pe-0 col-5 col-sm-4')
+        const row = bootstrapRows(`${day}`);
+        const dayCol = bootstrapColumns('day col-7 col-sm-2 col-md-7')
+        const timeCol = bootstrapColumns('sched ps-4 pe-0 col-5 col-sm-2 col-md-5')
 
 
         dayCol.innerHTML = `${day}`;
@@ -35,16 +35,19 @@ function storeHoursTemplate(obj) {
 }
 
 const dealerInfoContainer = document.createElement("div");
-const dealerFirstInfo = bootstrapRows('dealer-first-row m-0 mt-3 p-0 pb-3 mb-3'); 
+const dealerGroupFlexLeft = document.createElement("div");
+const dealerGroupFlexRight = document.createElement("div");
+const dealerFirstInfo = bootstrapRows('dealer-first-row m-0 mt-3 p-0 pb-3 mb-3 ms-md-2 me-md-5'); 
 const dealerLogoImg = document.createElement("img");
 const dealerAddress = document.createElement("h4");
 const dealerNumber = document.createElement("h2");
-const dealerOptions = bootstrapRows('dealer-options row');
+const dealerOptions = bootstrapRows('dealer-options row ms-md-0');
 const mapNHours = document.createElement('span');
 const contactUs = document.createElement('span');
-const timeSlotArea = bootstrapRows('timeslot-area mt-3 row')
+const timeSlotArea = bootstrapRows('timeslot-area mt-3')
 
-
+dealerGroupFlexLeft.classList.add('dealer-group-flex', 'pt-md-0', 'p-md-4');
+dealerGroupFlexRight.classList.add('dealer-group-flex');
 dealerLogoImg.classList.add('story-dealer-logo', 'p-0');
 dealerLogoImg.setAttribute('src', dealerLogo);
 dealerInfoContainer.classList.add('dealer-info-container', 'p-4', 'pt-5', 'pb-5')
@@ -96,6 +99,9 @@ for (var type of timeSlots) {
     timeSlotArea.append(slot);
 }
 
-dealerInfoContainer.append(dealerFirstInfo, dealerOptions, timeSlotArea);
+dealerGroupFlexLeft.append(dealerFirstInfo, dealerOptions)
+dealerGroupFlexRight.append(timeSlotArea)
+
+dealerInfoContainer.append(dealerGroupFlexLeft, dealerGroupFlexRight);
 
 export { dealerInfoContainer }

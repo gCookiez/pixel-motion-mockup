@@ -79,7 +79,6 @@ for (var [i, obj] of Object.entries(products)) {
     carouselModule.addSlide(product, i)
     
 }
-carouselModule.updateSlideCount();
 // carouselModule.nextSlide();
 featuredVehiclesCarousel.append(list);
 
