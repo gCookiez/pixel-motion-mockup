@@ -101,6 +101,7 @@
         min-width: 33vw !important;
     }
 
+    
 
 
 }
@@ -113,9 +114,17 @@
     }
 
     
+
+
 }
 
 @include media-breakpoint-up(xl) {
+    .search-container {
+        min-height: 600px;
+        background-position: 0px -100px;
+        background-image: url('@public/hero-large.png')
+    }
+
     .transform-footer {
         display: flex;
     }

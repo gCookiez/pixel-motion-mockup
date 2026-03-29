@@ -11,6 +11,7 @@ console.log(trimmedModule);
 const navBar = document.createElement('div');
 const navRow = bootstrapRows('pt-1 pb-1');
 
+
 const hamburgerCont = bootstrapColumns('d-flex ms-3 col-3 align-items-center justify-content-start');
 const hamburger = document.createElement('img');
 const logoCont = bootstrapColumns('col-5');
@@ -24,6 +25,7 @@ for (var [key, icon] of Object.entries(trimmedModule)) {
     details.append(img);
 }
 
+navBar.classList.add('nav-bar-mobile', 'd-block', 'd-sm-none');
 navRow.classList.add('text-center')
 hamburger.classList.add('menu-icon', 'ham')
 hamburger.setAttribute('src', hamIcon)

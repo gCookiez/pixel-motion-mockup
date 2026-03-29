@@ -3,9 +3,9 @@ import { shopButtons } from '../recycle/non-standard-buttons';
 import { trimmedModules } from '../recycle/trimmed-filenames';
 import { bootstrapRows, bootstrapColumns } from '../recycle/rows-and-columns'
 
-const imagesContext = import.meta.glob('@public/hero.jpg', { eager: true, import: 'default' });
+// const imagesContext = import.meta.glob('@public/hero.jpg', { eager: true, import: 'default' });
 
-const trimmedModule = trimmedModules(imagesContext)
+// const trimmedModule = trimmedModules(imagesContext)
 
 
 const firstContainer = document.createElement('div');
@@ -22,7 +22,7 @@ const buttonNames = ["SHOP NEW", "SHOP-PREOWNED", "SPECIALS"];
 title.classList.add('main-page-title', 'text-center');
 title.innerHTML = 'Welcome to <br> Triumph of Anytown';
 firstContainer.classList.add('search-container', 'p-4', 'pt-2', 'pb-5');
-firstContainer.setAttribute('style', `background-image: url(${trimmedModule['HERO']})`)
+
 buttonContainer.classList.add('button-grid');
 searchPlaceholder.classList.add('search-placeholder')
 searchPlaceholder.innerHTML = 'SEARCH RIDES'

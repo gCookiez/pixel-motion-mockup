@@ -39,6 +39,7 @@
     background-repeat: no-repeat;
     background-position: 0px -100px;
     background-size: cover;
+    background-image: url("@public/hero.jpg");
 
 }
 
