@@ -6,12 +6,18 @@ import hamIcon from '@public/hamburger.png'
 const imagesContext = import.meta.glob('@public/menu-icons/*.png', { eager: true, import: 'default' });
 const trimmedModule = trimmedModules(imagesContext);
 
-console.log(trimmedModule);
-
-const navBar = document.createElement('div');
-const navRow = bootstrapRows('pt-1 pb-1');
 
 
+//main container
+const navBarBase = document.createElement('div'); 
+
+//components from different sizes 
+const navBarMobile = document.createElement('div');
+const navBarDesktop = document.createElement('div')
+const navRowDesktop = bootstrapRows('p-3');
+const navRowMobile = bootstrapRows('pt-1 pb-1');
+
+//shared
 const hamburgerCont = bootstrapColumns('d-flex ms-3 col-3 align-items-center justify-content-start');
 const hamburger = document.createElement('img');
 const logoCont = bootstrapColumns('col-5');
@@ -25,8 +31,13 @@ for (var [key, icon] of Object.entries(trimmedModule)) {
     details.append(img);
 }
 
-navBar.classList.add('nav-bar-mobile', 'd-block', 'd-sm-none');
-navRow.classList.add('text-center')
+navBarBase.classList.add('nav-bar-base');
+
+
+
+// mobile components
+navBarMobile.classList.add('nav-bar-mobile', 'd-block', 'd-sm-none', 'd-md-none');
+navRowMobile.classList.add('text-center');
 hamburger.classList.add('menu-icon', 'ham')
 hamburger.setAttribute('src', hamIcon)
 hamburgerCont.append(hamburger)
@@ -34,9 +45,19 @@ logo.setAttribute('src', heroLogo)
 logo.classList.add('hero-logo')
 logoCont.append(logo)
 logoCont.classList.add('d-flex', 'align-items-center')
+navRowMobile.append(hamburgerCont, logoCont, details)
+navBarMobile.append(navRowMobile);
 
-navRow.append(hamburgerCont, logoCont, details)
-navBar.append(navRow);
+// desktop components
+const desktopLogo = logoCont.cloneNode(true);
+navBarDesktop.classList.add('nav-bar-desktop', 'd-none', 'd-sm-block', 'd-md-block')
+navRowDesktop.append(desktopLogo)
+navBarDesktop.append(navRowDesktop)
 
-export {navBar};
+
+
+
+navBarBase.append(navBarMobile, navBarDesktop)
+
+export {navBarBase};
 
