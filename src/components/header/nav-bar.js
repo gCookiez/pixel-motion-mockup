@@ -9,7 +9,7 @@ const trimmedModule = trimmedModules(imagesContext);
 
 
 //main container
-const navBarBase = document.createElement('div'); 
+const navBarBase = document.createElement('div');
 
 //components from different sizes 
 const navBarMobile = document.createElement('div');
@@ -50,14 +50,57 @@ navBarMobile.append(navRowMobile);
 
 // desktop components
 const desktopLogo = logoCont.cloneNode(true);
+const desktopRHS = bootstrapColumns('details col-7 ps-5')
+
+const rhsTop = bootstrapRows('nav-details-and-contact');
+const rhsBot = bootstrapRows('');
+
+
+const addressNavCol = bootstrapColumns('nav-address col-9 p-0');
+const contactNavCol = bootstrapColumns('nav-contact col-3 p-0');
+
+const addressNav = document.createElement('div');
+const addressNavIcon = document.createElement('img');
+const addressNavText = document.createElement('span');
+
+const contactNav = document.createElement('div');
+const contactNavText = document.createElement('span');
+
+
+addressNav.classList.add('justify-content-end', 'd-flex')
+
+addressNavIcon.setAttribute('src', trimmedModule['LOCATION']);
+addressNavText.innerHTML = '17979 NE Glisan St, Portland, OR 97230';
+
+contactNav.classList.add('justify-content-start', 'd-flex', 'ps-3')
+contactNavText.innerHTML = '503.000.000'
+
+addressNav.append(addressNavIcon, addressNavText);
+contactNav.append(contactNavText);
+
+
+
+rhsTop.classList.add('d-flex', 'justify-content-end')
+
+//rhs bot
+
+
+addressNavCol.append(addressNav);
+contactNavCol.append(contactNav);
+rhsTop.append(addressNavCol, contactNavCol);
+
+desktopLogo.querySelector('.hero-logo').classList.add('desktop-logo')
 navBarDesktop.classList.add('nav-bar-desktop', 'd-none', 'd-sm-block', 'd-md-block')
-navRowDesktop.append(desktopLogo)
-navBarDesktop.append(navRowDesktop)
+
+desktopRHS.append(rhsTop, rhsBot);
+navRowDesktop.append(desktopLogo, desktopRHS);
+navBarDesktop.append(navRowDesktop);
+
 
 
 
 
 navBarBase.append(navBarMobile, navBarDesktop)
 
-export {navBarBase};
+export { navBarBase };
 

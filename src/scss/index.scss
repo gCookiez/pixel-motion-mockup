@@ -76,6 +76,11 @@
         display: none !important;
     }
 
+    .hero-logo {
+        width: 230px;
+        height: 50px;
+    }
+
 }
 
 
@@ -91,6 +96,12 @@
         max-height: 250px !important;
     }
 
+    .hero-logo {
+        width: 230px;
+        height: 50px;
+    }
+
+    
 
 }
 
@@ -103,7 +114,6 @@
 
     
 
-
 }
 
 @include media-breakpoint-up(lg) {
@@ -112,8 +122,6 @@
     .review-box {
         min-width: 25vw !important;
     }
-
-    
 
 
 }
