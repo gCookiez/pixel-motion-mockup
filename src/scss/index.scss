@@ -1,5 +1,7 @@
 @import "bootstrap/scss/bootstrap";
 
+
+
 * {
     --accent: #EB1024;
     --sub-pattern-red: #d0002e;
@@ -45,6 +47,8 @@
 
 
 
+
+
 @include media-breakpoint-between(xs, sm) {
     @import "../css/xs-sm";
 }
@@ -53,6 +57,16 @@
 
 @include media-breakpoint-up(sm) {
     @import "../css/sm-md";
+
+    .events-button.events-width-a {
+        max-width: 100px !important;
+    }
+    .events-button.events-width-a > .button-body{
+        max-height: 40px !important;
+    }
+
+
+
 
 }
 
@@ -81,6 +95,8 @@
         height: 50px;
     }
 
+    
+
 }
 
 
@@ -101,7 +117,7 @@
         height: 50px;
     }
 
-    
+
 
 }
 
@@ -112,7 +128,7 @@
         min-width: 33vw !important;
     }
 
-    
+
 
 }
 

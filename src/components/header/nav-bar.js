@@ -3,9 +3,11 @@ import { bootstrapColumns, bootstrapRows } from '../recycle/rows-and-columns';
 import { trimmedModules } from '../recycle/trimmed-filenames';
 import heroLogo from '@public/dealer_logo.png'
 import hamIcon from '@public/hamburger.png'
+import { shopButtons } from '../recycle/non-standard-buttons';
 const imagesContext = import.meta.glob('@public/menu-icons/*.png', { eager: true, import: 'default' });
+const socialsContext = import.meta.glob('@public/social-icon/*.png', { eager: true, import: 'default' });
 const trimmedModule = trimmedModules(imagesContext);
-
+const socialsTrimmed = trimmedModules(socialsContext);
 
 
 //main container
@@ -53,9 +55,9 @@ const desktopLogo = logoCont.cloneNode(true);
 const desktopRHS = bootstrapColumns('details col-7 ps-5')
 
 const rhsTop = bootstrapRows('nav-details-and-contact');
-const rhsBot = bootstrapRows('');
+const rhsBot = bootstrapRows('w-50');
 
-
+//rhs top
 const addressNavCol = bootstrapColumns('nav-address col-9 p-0');
 const contactNavCol = bootstrapColumns('nav-contact col-3 p-0');
 
@@ -83,6 +85,27 @@ contactNav.append(contactNavText);
 rhsTop.classList.add('d-flex', 'justify-content-end')
 
 //rhs bot
+
+const socialsCont = bootstrapColumns('socials-cont col-5 d-flex justify-content-end gap-3 align-items-center pe-0');
+const eventsCont = bootstrapColumns('events-cont col-3 w-25');
+const valuesCont = bootstrapColumns('values-cont col-4');
+
+const fbLogo = document.createElement('img');
+const instaLogo = document.createElement('img');
+const youtubeLogo = document.createElement('img');
+
+const eventsButton = shopButtons('events-button events-width-a', 'Events')
+
+fbLogo.setAttribute('src', socialsTrimmed['FB'])
+instaLogo.setAttribute('src', socialsTrimmed['INSTA'])
+youtubeLogo.setAttribute('src', socialsTrimmed['YOUTUBE'])
+
+eventsCont.append(eventsButton);
+socialsCont.append(fbLogo, instaLogo, youtubeLogo)
+
+rhsBot.append(socialsCont, eventsCont, valuesCont)
+
+
 
 
 addressNavCol.append(addressNav);
