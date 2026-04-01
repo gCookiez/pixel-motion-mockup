@@ -177,21 +177,7 @@
     width: 75%;
 }
 
-.promo-overlay {
-    width: 100%;
-    height: 100%;
-    background-color: var(--tp-color);
-}
 
-.promo-overlay>* {
-    color: #fff;
-}
-
-.promo-container {
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}
 
 
 /*End Promo*/
