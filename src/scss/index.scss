@@ -45,6 +45,14 @@
     background-image: repeating-linear-gradient(135deg, gray, gray 2px, black 2px, black 8px);
 }
 
+.nav-row-ham-desktop {
+    background-color: var(--footer-bg);
+}
+
+.nav-row-ham-desktop > * .ham {
+    filter: invert(100%);
+}
+
 
 
 

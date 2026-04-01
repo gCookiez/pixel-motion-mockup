@@ -16,8 +16,9 @@ const navBarBase = document.createElement('div');
 //components from different sizes 
 const navBarMobile = document.createElement('div');
 const navBarDesktop = document.createElement('div')
-const navRowDesktop = bootstrapRows('p-3');
-const navRowMobile = bootstrapRows('pt-1 pb-1');
+const navRowDesktop = bootstrapRows('nav-row-desktop p-3');
+const navRowMobile = bootstrapRows('nav-row-mobile pt-1 pb-1');
+const navHamRowDesktop = bootstrapRows('nav-row-ham-desktop d-xs-none d-sm-flex d-md-flex d-lg-none justify-content-end p-2 h-50');
 
 //shared
 const hamburgerCont = bootstrapColumns('d-flex ms-3 col-3 align-items-center justify-content-start');
@@ -83,9 +84,6 @@ addressNav.append(addressNavIcon, addressNavText);
 contactNav.append(contactNavText);
 
 
-
-// rhsTop.classList.add('d-flex', 'justify-content-end')
-
 //rhs bot
 
 const socialsCont = bootstrapColumns('socials-cont d-flex col-sm-auto col-md-3 col-lg-auto pe-lg-0 justify-content-lg-end justify-content-end h-100 gap-3 align-items-center');
@@ -95,9 +93,14 @@ const valuesCont = bootstrapColumns('values-cont d-flex col-sm-auto col-md-5 col
 const fbLogo = document.createElement('img');
 const instaLogo = document.createElement('img');
 const youtubeLogo = document.createElement('img');
+const eventsLogo = document.createElement('img');
 
-const eventsButton = shopButtons('events-button events-width-a ps-lg-0 w-100', 'Events')
-eventsButton.querySelector('.button-body').classList.add('ps-5', 'pe-5')
+
+
+const eventsButton = shopButtons('events-button events-width-a ps-lg-0', 'Events')
+eventsButton.querySelector('.button-body').classList.add('ps-3', 'pe-5', 'gap-1')
+eventsButton.querySelector('.button-body').prepend(eventsLogo);
+
 
 const valuesIcon = document.createElement('img');
 const valuesText = document.createElement('span');
@@ -105,9 +108,17 @@ const valuesText = document.createElement('span');
 fbLogo.setAttribute('src', socialsTrimmed['FB'])
 instaLogo.setAttribute('src', socialsTrimmed['INSTA'])
 youtubeLogo.setAttribute('src', socialsTrimmed['YOUTUBE'])
+eventsLogo.setAttribute('src', socialsTrimmed['CALENDAR'])
 
 valuesIcon.setAttribute('src', socialsTrimmed['RELOAD']);
 valuesText.innerHTML = 'VALUE YOUR TRADE';
+
+const hamClone = hamburgerCont.cloneNode(true);
+
+hamClone.classList.remove('col-3', 'col', 'justify-content-start')
+hamClone.classList.add('justify-content-end')
+hamClone.querySelector('.ham').classList.add('pe-2');
+navHamRowDesktop.append(hamClone);
 
 
 
@@ -130,7 +141,7 @@ navBarDesktop.classList.add('nav-bar-desktop', 'd-none', 'd-sm-block', 'd-md-blo
 
 desktopRHS.append(rhsTop, hr, rhsBot);
 navRowDesktop.append(desktopLogo, desktopRHS);
-navBarDesktop.append(navRowDesktop);
+navBarDesktop.append(navRowDesktop, navHamRowDesktop);
 
 
 
