@@ -88,15 +88,16 @@ contactNav.append(contactNavText);
 
 //rhs bot
 
-const socialsCont = bootstrapColumns('socials-cont d-flex col-sm-auto col-md-3 col-lg-3 justify-content-lg-end justify-content-end h-100 gap-3 align-items-center');
-const eventsCont = bootstrapColumns('events-cont d-flex col-sm-auto col-md-3 col-lg-2 justify-content-end align-items-center');
-const valuesCont = bootstrapColumns('values-cont d-flex col-sm-auto col-md-5 col-lg-3 h-100 gap-1 align-items-center');
+const socialsCont = bootstrapColumns('socials-cont d-flex col-sm-auto col-md-3 col-lg-auto pe-lg-0 justify-content-lg-end justify-content-end h-100 gap-3 align-items-center');
+const eventsCont = bootstrapColumns('events-cont d-flex col-sm-auto col-md-3 col-lg-auto justify-content-end align-items-center');
+const valuesCont = bootstrapColumns('values-cont d-flex col-sm-auto col-md-5 col-lg-auto h-100 gap-1 align-items-center');
 
 const fbLogo = document.createElement('img');
 const instaLogo = document.createElement('img');
 const youtubeLogo = document.createElement('img');
 
-const eventsButton = shopButtons('events-button events-width-a w-100', 'Events')
+const eventsButton = shopButtons('events-button events-width-a ps-lg-0 w-100', 'Events')
+eventsButton.querySelector('.button-body').classList.add('ps-5', 'pe-5')
 
 const valuesIcon = document.createElement('img');
 const valuesText = document.createElement('span');
