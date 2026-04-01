@@ -54,7 +54,7 @@ navBarMobile.append(navRowMobile);
 // desktop components
 const desktopLogo = logoCont.cloneNode(true);
 desktopLogo.classList.remove('col-5');
-desktopLogo.classList.add('col-sm-4' , 'col-md-5')
+desktopLogo.classList.add('col-sm-4' , 'col-md-5' , "ps-sm-3", "ps-lg-5")
 const desktopRHS = bootstrapColumns('details col-sm-8 col-md-7 d-flex flex-column align-items-end gap-2')
 
 const rhsTop = bootstrapRows('nav-details-and-contact d-flex justify-content-end');

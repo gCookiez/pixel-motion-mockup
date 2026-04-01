@@ -152,8 +152,9 @@
 
 @include media-breakpoint-up(xl) {
     .search-container {
-        min-height: 600px;
-        background-position: 0px -100px;
+        padding-bottom: 10em !important;
+        background-position: center;
+        background-size: cover;
         background-image: url('@public/hero-large.png')
     }
 

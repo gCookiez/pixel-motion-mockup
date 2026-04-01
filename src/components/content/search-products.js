@@ -20,7 +20,8 @@ const searchrhs =  bootstrapColumns('search-rhs d-flex col-10 align-items-center
 const hiddenHamMenu = bootstrapRows('hidden-ham-menu d-none d-lg-flex justify-content-center mb-3 mt-3 ps-3 pe-3');
 const hamMenuWrapper = bootstrapRows('text-light fw-semibold ham-menu-wrapper ps-3 pe-3 d-flex justify-content-center gap-1');
 
-
+const titleBreak = document.createElement('br')
+titleBreak.classList.add('d-sm-none', 'd-lg-none', 'd-sm-block');
 
 const hamMenuList = ["AMAZING DEALS", "MOTORCYCLES", "SERVICE", "PARTS", "FINANCING", "ABOUT US"]
 const buttonNames = ["SHOP NEW", "SHOP-PREOWNED", "SPECIALS"];
@@ -37,12 +38,12 @@ for(var i of hamMenuList) {
 }
 
 
-
+console.log(titleBreak._proto_);
 title.classList.add('main-page-title', 'text-center');
-title.innerHTML = 'Welcome to <br> Triumph of Anytown';
-firstContainer.classList.add('search-container', 'p-4', 'pt-2', 'pb-5');
+title.innerHTML = `Welcome to ` + titleBreak.outerHTML + `Triumph of Anytown`;
+firstContainer.classList.add('search-container', 'p-4', 'pt-2', 'pb-sm-5');
 
-buttonContainer.classList.add('button-grid');
+buttonContainer.classList.add('button-grid', 'ps-lg-5', 'pe-lg-5', 'ms-lg-5', 'me-lg-5', 'row-gap-lg-4', 'column-gap-lg-5');
 searchPlaceholder.classList.add('search-placeholder')
 searchPlaceholder.innerHTML = 'SEARCH RIDES'
 
