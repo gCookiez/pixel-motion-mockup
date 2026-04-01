@@ -52,14 +52,16 @@ navBarMobile.append(navRowMobile);
 
 // desktop components
 const desktopLogo = logoCont.cloneNode(true);
-const desktopRHS = bootstrapColumns('details col-7 ps-5')
+desktopLogo.classList.remove('col-5');
+desktopLogo.classList.add('col-sm-4' , 'col-md-5')
+const desktopRHS = bootstrapColumns('details col-sm-8 col-md-7 d-flex flex-column align-items-end gap-2')
 
-const rhsTop = bootstrapRows('nav-details-and-contact');
-const rhsBot = bootstrapRows('w-50');
+const rhsTop = bootstrapRows('nav-details-and-contact d-flex justify-content-end');
+const rhsBot = bootstrapRows('h-50 w-100 d-md-flex justify-content-end d-sm-grid gap-2');
 
 //rhs top
-const addressNavCol = bootstrapColumns('nav-address col-9 p-0');
-const contactNavCol = bootstrapColumns('nav-contact col-3 p-0');
+const addressNavCol = bootstrapColumns('nav-address w-auto col-sm-7 col-md-9 d-flex justify-content-end');
+const contactNavCol = bootstrapColumns('nav-contact w-auto col-sm-5 col-md-3 d-flex justify-content-end');
 
 const addressNav = document.createElement('div');
 const addressNavIcon = document.createElement('img');
@@ -82,31 +84,41 @@ contactNav.append(contactNavText);
 
 
 
-rhsTop.classList.add('d-flex', 'justify-content-end')
+// rhsTop.classList.add('d-flex', 'justify-content-end')
 
 //rhs bot
 
-const socialsCont = bootstrapColumns('socials-cont col-5 d-flex justify-content-end gap-3 align-items-center pe-0');
-const eventsCont = bootstrapColumns('events-cont col-3 w-25');
-const valuesCont = bootstrapColumns('values-cont col-4');
+const socialsCont = bootstrapColumns('socials-cont d-flex col-sm-auto col-md-3 col-lg-3 justify-content-lg-end justify-content-end h-100 gap-3 align-items-center');
+const eventsCont = bootstrapColumns('events-cont d-flex col-sm-auto col-md-3 col-lg-2 justify-content-end align-items-center');
+const valuesCont = bootstrapColumns('values-cont d-flex col-sm-auto col-md-5 col-lg-3 h-100 gap-1 align-items-center');
 
 const fbLogo = document.createElement('img');
 const instaLogo = document.createElement('img');
 const youtubeLogo = document.createElement('img');
 
-const eventsButton = shopButtons('events-button events-width-a', 'Events')
+const eventsButton = shopButtons('events-button events-width-a w-100', 'Events')
+
+const valuesIcon = document.createElement('img');
+const valuesText = document.createElement('span');
 
 fbLogo.setAttribute('src', socialsTrimmed['FB'])
 instaLogo.setAttribute('src', socialsTrimmed['INSTA'])
 youtubeLogo.setAttribute('src', socialsTrimmed['YOUTUBE'])
 
+valuesIcon.setAttribute('src', socialsTrimmed['RELOAD']);
+valuesText.innerHTML = 'VALUE YOUR TRADE';
+
+
+
 eventsCont.append(eventsButton);
 socialsCont.append(fbLogo, instaLogo, youtubeLogo)
-
+valuesCont.append(valuesIcon, valuesText)
 rhsBot.append(socialsCont, eventsCont, valuesCont)
 
 
+const hr = document.createElement('hr');
 
+hr.classList.add('border', 'border-1', 'border-black', 'w-75', 'm-0', 'opacity-100')
 
 addressNavCol.append(addressNav);
 contactNavCol.append(contactNav);
@@ -115,7 +127,7 @@ rhsTop.append(addressNavCol, contactNavCol);
 desktopLogo.querySelector('.hero-logo').classList.add('desktop-logo')
 navBarDesktop.classList.add('nav-bar-desktop', 'd-none', 'd-sm-block', 'd-md-block')
 
-desktopRHS.append(rhsTop, rhsBot);
+desktopRHS.append(rhsTop, hr, rhsBot);
 navRowDesktop.append(desktopLogo, desktopRHS);
 navBarDesktop.append(navRowDesktop);
 
