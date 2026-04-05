@@ -197,9 +197,18 @@
     min-height: 214px;
     height: 15vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.big-link-item.test_ride > .big-link-img {
+    width: 67px;
+    height: 43px;
+}
+.big-link-item.parts__accessories > .big-link-img {
+    width: 67px;
+    height: 55px;
 }
 
 .big-link-title {
@@ -463,7 +472,7 @@
 
 .group-newsletter > .promo-redirect-link {
     border-color: #fff;
-    width: 80%;
+    width: 75%;
 }
 
 .group-newsletter > .newsletter-submit {

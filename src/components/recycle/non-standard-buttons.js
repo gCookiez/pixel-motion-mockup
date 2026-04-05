@@ -26,8 +26,8 @@ export function underLineButton(classes, title) {
     const promoButtonTitle = document.createElement('h3');
     const promoPoint = document.createElement('h3');
     const promoWrapper = bootstrapRows('promo-wrapper');
-    const promoLHS = bootstrapColumns('promo-lhs');
-    const promoRHS = bootstrapColumns('promo-rhs d-flex justify-content-end');
+    const promoLHS = bootstrapColumns('promo-lhs col-10');
+    const promoRHS = bootstrapColumns('promo-rhs col-2 d-flex justify-content-end');
 
     promoButtonTitle.innerHTML = `${title ? title : 'LINK'}`;
     promoPoint.innerHTML = `>`;

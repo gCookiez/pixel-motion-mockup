@@ -7,8 +7,8 @@ import { bootstrapColumns, bootstrapRows } from "../recycle/rows-and-columns";
 
 const promoContainer = document.createElement('div');
 const promoOverlay = document.createElement('div');
-const promoObject = bootstrapRows('promo-content');
-const promoObjectCol = bootstrapColumns('promo-content-lhs col-12 col-sm-7');
+const promoObject = bootstrapRows('promo-content d-md-flex');
+const promoObjectCol = bootstrapColumns('promo-content-lhs col-12 col-sm-7 flex-md-column gap-md-5 gap-lg-0');
 
 const promoTitle = document.createElement('h1');
 const promoLinks = document.createElement('div');
@@ -17,12 +17,12 @@ const imageExt = document.createElement('div');
 const promoLinkTitles = ['PROMOTIONS', 'EVENTS'];
 
 promoContainer.classList.add('promo-container', 'd-flex', 'flex-row', 'mt-3', 'position-relative');
-promoOverlay.classList.add('promo-overlay', ...containerTemplate('list'), 'w-100', 'h-50')
+promoOverlay.classList.add('promo-overlay', ...containerTemplate('list'), 'w-100', 'h-50', 'd-md-flex', 'flex-md-column', 'justify-content-center')
 // promoContainer.setAttribute('style', `background-image: url(${trimmedModule['PROMO']})`)
 
 promoTitle.innerHTML = `VIEW CURRENT PROMOTIONS AND EVENTS`;
 promoTitle.classList.add('promo-title');
-promoLinks.classList.add('promo-links-container', 'mt-3');
+promoLinks.classList.add('promo-links-container', 'mt-3', 'd-md-flex', 'gap-2', "mt-md-5");
 
 for (var promoLink of promoLinkTitles) {
 	const iterPromoLink = underLineButton('p-1 ps-0 mb-3', promoLink);

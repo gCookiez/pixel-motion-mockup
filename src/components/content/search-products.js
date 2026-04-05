@@ -3,6 +3,8 @@ import { shopButtons } from '../recycle/non-standard-buttons';
 import { trimmedModules } from '../recycle/trimmed-filenames';
 import { bootstrapRows, bootstrapColumns } from '../recycle/rows-and-columns'
 
+import search from "@public/menu-icons/search.png";
+
 // const imagesContext = import.meta.glob('@public/hero.jpg', { eager: true, import: 'default' });
 
 // const trimmedModule = trimmedModules(imagesContext)
@@ -14,8 +16,8 @@ const titleContainer = bootstrapRows('title-container d-flex align-items-center 
 const buttonContainer = document.createElement('div');
 const searchContainer = bootstrapRows('search-area ms-0')
 const searchPlaceholder = document.createElement('span');
-const searchlhs =  bootstrapColumns('search-lhs col-2')
-const searchrhs =  bootstrapColumns('search-rhs d-flex col-10 align-items-center')
+const searchlhs =  bootstrapColumns('search-lhs col-2 d-flex align-items-center justify-content-center')
+const searchrhs =  bootstrapColumns('search-rhs d-flex col-8 align-items-center')
 
 const hiddenHamMenu = bootstrapRows('hidden-ham-menu d-none d-lg-flex justify-content-center mb-3 mt-3 ps-3 pe-3');
 const hamMenuWrapper = bootstrapRows('text-light fw-semibold ham-menu-wrapper ps-3 pe-3 d-flex justify-content-center gap-1');
@@ -37,7 +39,8 @@ for(var i of hamMenuList) {
     hamMenuWrapper.append(col, vr)
 }
 
-
+const searchImg = document.createElement('img');
+searchImg.setAttribute('src', search);
 console.log(titleBreak._proto_);
 title.classList.add('main-page-title', 'text-center');
 title.innerHTML = `Welcome to ` + titleBreak.outerHTML + `Triumph of Anytown`;
@@ -53,6 +56,7 @@ for (var buttonText of buttonNames) {
     buttonContainer.append(shopButton);
 }
 hiddenHamMenu.append(hamMenuWrapper)
+searchlhs.append(searchImg);
 searchrhs.append(searchPlaceholder);
 searchContainer.append(searchlhs, searchrhs);
 buttonContainer.append(searchContainer);

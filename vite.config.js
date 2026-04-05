@@ -12,6 +12,7 @@ export default defineConfig(({ mode }) => {
         '@content': path.resolve(__dirname, './src/components/content'),
         '@header': path.resolve(__dirname, './src/components/header'),
         '@footer': path.resolve(__dirname, './src/components/footer'),
+        '@fonts': path.resolve(__dirname, './src/css/fonts'),
         '@public': path.resolve(__dirname, './public')
       }
     },

@@ -1,5 +1,7 @@
 @import "bootstrap/scss/bootstrap";
-
+@import "@fonts/poppins.css";
+@import "@fonts/work-sans.css";
+@import "@fonts/teko.css";
 
 
 * {
@@ -15,6 +17,8 @@
 
     --tp-color: #00000099;
 
+    --grid-link: #221F1F;
+
     --tp-button-color: #d9d9d94d;
     --button-padding-tb: 20px;
     --button-padding-lr: 330px;
@@ -27,6 +31,7 @@
     --color-cycle-4: #512DA8;
 
     --footer-bg: #282828;
+    --gradient-pair-footer: #252525;
 
     --border-bottom: 2px solid;
     --vr-color: #DF203A;
@@ -37,12 +42,75 @@
 
 }
 
+.nav-bar-base {
+    font-family: 'Poppins';
+}
+
+.nav-contact > * {
+    color: var(--sub-accent);
+    font-weight: 700;
+}
+
+.values-cont  {
+    color: var(--sub-accent);
+    font-weight: 600;
+}
+
+h1, h2 {
+    font-family: "Work Sans";
+    font-weight: 700;
+}
+
+p, .quick-links, 
+.details-group > a,
+.promo-lhs > *{
+    font-family: "Work Sans";
+    font-weight: 400;
+}
+
+.details-group > a, .details-group > a:hover, .details-group > a:visited{
+    text-decoration: none;
+    color: var(--grid-link);
+}
+
+
+.button-body > *,
+.details-group > *,
+.timeslot-area > *{
+    font-family: "Work Sans";
+    font-weight: 600;
+}
+
+.timeslot-area > * h2 {
+    font-size: 24px;
+}
+
+
+.promo-title {
+    font-family: 'Teko';
+    font-weight: 600;
+    font-size: 35px;
+
+}
+
+.promo-links-container > .promo-redirect-link  > * {
+    font-family: "Work Sans";
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.big-link-title {
+    font-family: 'Teko';
+    font-weight: 600;
+    font-size: 40px;
+}
+
 .big-link-container>.test_ride {
     background-image: repeating-linear-gradient(135deg, var(--sub-pattern-red), var(--sub-pattern-red) 2px, var(--accent) 2px, var(--accent) 8px);
 }
 
 .big-link-container>.parts__accessories {
-    background-image: repeating-linear-gradient(135deg, gray, gray 2px, black 2px, black 8px);
+    background-image: repeating-linear-gradient(135deg, var(--gradient-pair-footer),  var(--gradient-pair-footer) 2px, var(--footer-bg) 2px, var(--footer-bg) 8px);
 }
 
 .nav-row-ham-desktop {
@@ -51,6 +119,10 @@
 
 .nav-row-ham-desktop>* .ham {
     filter: invert(100%);
+}
+
+.promo-overlay>* {
+    color: #fff;
 }
 
 
@@ -117,9 +189,7 @@
         transform: translateY(10px);
     }
 
-    .promo-overlay>* {
-        color: #fff;
-    }
+
 
     .promo-container {
         min-height: 50vh;
@@ -134,7 +204,7 @@
         width: 325px;
         height: 325px;
         right: 0px;
-        top:25px;
+        top: 25px;
     }
 
 
@@ -159,6 +229,27 @@
         height: 50px;
     }
 
+    .promo-container {
+        padding-top: 10em;
+        padding-bottom: 10em;
+        margin-bottom: 10em;
+        box-sizing: border-box;
+        background-image: url('@public/promo-md.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+    }
+
+    .promo-overlay {
+        
+        height: 500px !important;
+    }
+
+    .mini-img-promo {
+        display: none;
+    }
+
 
 
 }
@@ -179,6 +270,34 @@
     .motor-frame,
     .review-box {
         min-width: 25vw !important;
+    }
+
+    .promo-container {
+        background-image: none;
+
+    }
+
+    .promo-overlay {
+        box-sizing: border-box;
+        background-image: url('@public/promo-ext.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: unset !important;
+    }
+
+    .mini-img-promo {
+        background-image: url('@public/promo-mini.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 400px;
+        height: 400px;
+        position: sticky;
+        display: block;
+
+        right: 3vw;
+        top: 120px;
     }
 
 
