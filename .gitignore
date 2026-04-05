@@ -26,3 +26,4 @@ dist-ssr
 #reference files
 # Parts.txt
 .env
+.env
